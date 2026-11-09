@@ -11,19 +11,15 @@
 # MARKDOWN ********************
 
 # # AMLAI - Aula 1 - Exercise 1: Build and Evaluate Neighbourhood Recommenders
-#
-# In Tutorial 1, the rating matrix used **users as rows** and **items as
+# # In Tutorial 1, the rating matrix used **users as rows** and **items as
 # columns**. Keep that convention throughout this exercise.
-#
-# You will:
-#
-# 1. compute adjusted-cosine item similarities without treating missing
+# # You will:
+# # 1. compute adjusted-cosine item similarities without treating missing
 #    ratings as zeros;
 # 2. generate normalized item-based predictions for unseen items;
 # 3. build a positive-neighbour user-based recommender;
 # 4. mask observed ratings and measure holdout RMSE and MAE.
-#
-# Replace each `____` placeholder, then run the checks below the task. Hidden
+# # Replace each `____` placeholder, then run the checks below the task. Hidden
 # reference solutions are available after each section, but try the task first.
 
 # CELL ********************
@@ -175,11 +171,9 @@ print(example_holdout_df.to_string(index=False))
 # MARKDOWN ********************
 
 # ## 1. Adjusted-Cosine Item Similarity
-#
-# Complete the function below. Use only users who rated both items. Require at
+# # Complete the function below. Use only users who rated both items. Require at
 # least `min_common` co-raters and guard against a zero denominator.
-#
-# Remember: because users are rows, an item's rating vector is a **column**.
+# # Remember: because users are rows, an item's rating vector is a **column**.
 
 # CELL ********************
 
@@ -233,19 +227,16 @@ print(item_similarity_df.round(3))
 
 # <details>
 # <summary>Reference solution for Task 1</summary>
-#
-# ```python
+# # ```python
 # def adjusted_cosine_item_similarity(ratings, min_common=2):
 #     validate_ratings(ratings)
 #     if min_common < 1:
 #         raise ValueError("min_common must be at least 1.")
-#
-#     user_means = ratings.mean(axis=1, skipna=True)
+# #     user_means = ratings.mean(axis=1, skipna=True)
 #     centred = ratings.sub(user_means, axis=0)
 #     item_names = ratings.columns
 #     similarities = np.zeros((len(item_names), len(item_names)), dtype=float)
-#
-#     for i, left_item in enumerate(item_names):
+# #     for i, left_item in enumerate(item_names):
 #         similarities[i, i] = 1.0
 #         for j in range(i + 1, len(item_names)):
 #             right_item = item_names[j]
@@ -258,16 +249,14 @@ print(item_similarity_df.round(3))
 #             if denominator > 0:
 #                 value = float(np.dot(left, right) / denominator)
 #                 similarities[i, j] = similarities[j, i] = value
-#
-#     return pd.DataFrame(similarities, index=item_names, columns=item_names)
+# #     return pd.DataFrame(similarities, index=item_names, columns=item_names)
 # ```
 # </details>
 
 # MARKDOWN ********************
 
 # ## 2. Item-Based Recommendations
-#
-# Predict an unseen rating with a normalized weighted sum of the target user's
+# # Predict an unseen rating with a normalized weighted sum of the target user's
 # rating deviations. Keep only positive similarities. Then create the unseen
 # candidate set **before** sorting so that already-rated movies cannot consume
 # a top-\(k\) position.
@@ -348,8 +337,7 @@ print(item_recommendations.to_string(index=False))
 
 # <details>
 # <summary>Reference solution for Task 2</summary>
-#
-# ```python
+# # ```python
 # def predict_item_rating(user, item, ratings, item_similarities):
 #     if user not in ratings.index:
 #         raise KeyError(f"Unknown user: {user!r}")
@@ -357,8 +345,7 @@ print(item_recommendations.to_string(index=False))
 #         raise KeyError(f"Unknown item: {item!r}")
 #     if not pd.isna(ratings.loc[user, item]):
 #         raise ValueError(f"{user!r} has already rated {item!r}.")
-#
-#     user_ratings = ratings.loc[user]
+# #     user_ratings = ratings.loc[user]
 #     rated_items = user_ratings.dropna().index
 #     similarities = item_similarities.loc[item, rated_items]
 #     useful = similarities[similarities > 0]
@@ -371,8 +358,7 @@ print(item_recommendations.to_string(index=False))
 #         return None
 #     prediction = user_mean + float(np.dot(useful, deviations)) / denominator
 #     return float(np.clip(prediction, RATING_MIN, RATING_MAX))
-#
-# def recommend_items(user, ratings, item_similarities, k=3):
+# # def recommend_items(user, ratings, item_similarities, k=3):
 #     if not isinstance(k, int) or k < 1:
 #         raise ValueError("k must be a positive integer.")
 #     if user not in ratings.index:
@@ -401,8 +387,7 @@ print(item_recommendations.to_string(index=False))
 # MARKDOWN ********************
 
 # ## 3. User-Based Recommendations
-#
-# Calculate Pearson similarity using co-rated items only. The recommendation
+# # Calculate Pearson similarity using co-rated items only. The recommendation
 # function must exclude the active user and select up to `k_neighbors`
 # positive neighbours that rated each candidate item.
 
@@ -509,8 +494,7 @@ print(user_recommendations.to_string(index=False))
 
 # <details>
 # <summary>Reference solution for Task 3</summary>
-#
-# ```python
+# # ```python
 # def pearson_user_similarity(ratings, min_common=2):
 #     validate_ratings(ratings)
 #     if min_common < 2:
@@ -537,8 +521,7 @@ print(user_recommendations.to_string(index=False))
 #     return pd.DataFrame(
 #         similarities, index=user_names, columns=user_names
 #     )
-#
-# def recommend_users(user, ratings, user_similarities, k=3, k_neighbors=3):
+# # def recommend_users(user, ratings, user_similarities, k=3, k_neighbors=3):
 #     validate_ratings(ratings)
 #     if user not in ratings.index:
 #         raise KeyError(f"Unknown user: {user!r}")
@@ -589,13 +572,11 @@ print(user_recommendations.to_string(index=False))
 # MARKDOWN ********************
 
 # ## 4. Holdout Evaluation
-#
-# Offline evaluation must hide ratings before fitting similarities. Otherwise,
+# # Offline evaluation must hide ratings before fitting similarities. Otherwise,
 # the answer leaks into the model. Use the deterministic masking helper from
 # the setup, fit item similarity on `train_ratings`, predict each held-out
 # observation, and calculate RMSE and MAE only for valid predictions.
-#
-# Some sparse holdouts may have no positive item neighbour. Record those as
+# # Some sparse holdouts may have no positive item neighbour. Record those as
 # unavailable rather than inventing a rating, and report prediction coverage.
 
 # CELL ********************
@@ -644,12 +625,10 @@ print(f"Coverage:     {coverage:.1%}")
 
 # <details>
 # <summary>Reference solution for Task 4</summary>
-#
-# ```python
+# # ```python
 # train_ratings, held_out = make_user_holdout(ratings_df, seed=17)
 # train_item_similarity = adjusted_cosine_item_similarity(train_ratings)
-#
-# evaluation_rows = []
+# # evaluation_rows = []
 # for row in held_out.itertuples(index=False):
 #     predicted = predict_item_rating(
 #         row.user, row.item, train_ratings, train_item_similarity
@@ -662,8 +641,7 @@ print(f"Coverage:     {coverage:.1%}")
 #             "predicted": predicted,
 #         }
 #     )
-#
-# evaluation_df = pd.DataFrame(evaluation_rows)
+# # evaluation_df = pd.DataFrame(evaluation_rows)
 # scored_df = evaluation_df.dropna(subset=["predicted"])
 # if scored_df.empty:
 #     raise ValueError(
@@ -677,12 +655,10 @@ print(f"Coverage:     {coverage:.1%}")
 # MARKDOWN ********************
 
 # ## Reflection
-#
-# - Why is coverage useful alongside RMSE and MAE?
+# # - Why is coverage useful alongside RMSE and MAE?
 # - What changes when `min_common` or `k_neighbors` increases?
 # - Why would evaluating on ratings used to calculate similarity be optimistic?
 # - What side information could help a genuinely new user or new movie?
-#
-# Tutorial 2 introduces regularized matrix factorization. It improves how
+# # Tutorial 2 introduces regularized matrix factorization. It improves how
 # sparse observed ratings are modelled, but it still needs side information or
 # an onboarding strategy for true cold start.

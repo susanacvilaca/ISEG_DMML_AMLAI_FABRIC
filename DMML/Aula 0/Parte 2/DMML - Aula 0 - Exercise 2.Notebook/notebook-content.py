@@ -92,7 +92,7 @@ reviews.head()
 # CELL ********************
 
 # Your code here
-desc = ____
+desc = reviews.description
 
 # Check your answer
 q1.check()
@@ -128,7 +128,7 @@ q1.check()
 
 # CELL ********************
 
-first_description = ____
+first_description = reviews.description.iloc[0]
 
 # Check your answer
 q2.check()
@@ -161,7 +161,7 @@ first_description
 
 # CELL ********************
 
-first_row = ____
+first_row = reviews.iloc[0]
 
 # Check your answer
 q3.check()
@@ -196,7 +196,7 @@ first_row
 
 # CELL ********************
 
-first_descriptions = ____
+first_descriptions = reviews.description.iloc[:10]
 
 # Check your answer
 q4.check()
@@ -233,7 +233,7 @@ first_descriptions
 
 # CELL ********************
 
-sample_reviews = ____
+sample_reviews = reviews.loc[[1,2,3,5,8]]
 
 # Check your answer
 q5.check()
@@ -268,7 +268,7 @@ sample_reviews
 
 # CELL ********************
 
-df = ____
+df = reviews.loc[[0,1,10,100], ["country", "province", "region_1", "region_2"]]
 
 # Check your answer
 q6.check()
@@ -308,7 +308,7 @@ df
 
 # CELL ********************
 
-df = ____
+df = reviews.loc[:99, ["country", "variety"]]
 
 # Check your answer
 q7.check()
@@ -341,7 +341,7 @@ df
 
 # CELL ********************
 
-italian_wines = ____
+italian_wines = reviews.loc[reviews['country'] == 'Italy']
 
 # Check your answer
 q8.check()
@@ -373,7 +373,7 @@ q8.check()
 
 # CELL ********************
 
-top_oceania_wines = ____
+top_oceania_wines = reviews.loc[(reviews['country'].isin(["Australia", "New Zealand"])) & (reviews['points'] >=95)]
 
 # Check your answer
 q9.check()

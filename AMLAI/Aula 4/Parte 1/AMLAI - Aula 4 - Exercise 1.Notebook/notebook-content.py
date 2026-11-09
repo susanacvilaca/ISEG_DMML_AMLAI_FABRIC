@@ -31,8 +31,7 @@
 # In the tutorial, we saw how to build an image classifier by attaching a head of dense layers to a pretrained base. The base we used was from a model called **VGG16**. We saw that the VGG16 architecture was prone to overfitting this dataset. Over this course, you'll learn a number of ways you can improve upon this initial attempt.
 # 
 # The first way you'll see is to use a base more appropriate to the dataset. The base this model comes from is called **InceptionV1** (also known as GoogLeNet). InceptionV1 was one of the early winners of the ImageNet competition. One of its successors, InceptionV4, is among the state of the art today.
-#
-# To get started, run the code cell below to set everything up.
+# # To get started, run the code cell below to set everything up.
 
 # CELL ********************
 
@@ -167,8 +166,7 @@ pretrained_base = tf.keras.models.load_model(
 # MARKDOWN ********************
 
 # # 1) Define Pretrained Base #
-#
-# Now that you have a pretrained base to do our feature extraction, decide whether this base should be trainable or not.
+# # Now that you have a pretrained base to do our feature extraction, decide whether this base should be trainable or not.
 
 # CELL ********************
 
@@ -203,8 +201,7 @@ q_1.solution()
 # # 2) Attach Head #
 # 
 # Now that the base is defined to do the feature extraction, create a head of `Dense` layers to perform the classification, following this diagram:
-#
-# <figure>
+# # <figure>
 # <img src="https://storage.googleapis.com/kaggle-media/learn/images/i5VU7Ry.png" alt="Diagram of the dense head.">
 # </figure>
 
@@ -249,8 +246,7 @@ q_2.solution()
 # # 3) Train #
 # 
 # Before training a model in Keras, you need to specify an *optimizer* to perform the gradient descent, a *loss function* to be minimized, and (optionally) any *performance metrics*. The optimization algorithm we'll use for this course is called ["Adam"](https://keras.io/api/optimizers/adam/), which generally performs well regardless of what kind of problem you're trying to solve.
-#
-# The loss and the metrics, however, need to match the kind of problem you're trying to solve. Our problem is a **binary classification** problem: `Car` coded as 0, and `Truck` coded as 1. Choose an appropriate loss and an appropriate accuracy metric for binary classification.
+# # The loss and the metrics, however, need to match the kind of problem you're trying to solve. Our problem is a **binary classification** problem: `Car` coded as 0, and `Truck` coded as 1. Choose an appropriate loss and an appropriate accuracy metric for binary classification.
 
 # CELL ********************
 

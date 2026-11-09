@@ -15,12 +15,9 @@
 # You did such a great job for DeFalco's restaurant in the previous exercise that the chef has hired you for a new project.
 # 
 # The restaurant's menu includes an email address where visitors can give feedback about their food.
-#
-# The manager wants you to create a tool that automatically sends him all the negative reviews so he can fix them, while automatically sending all the positive reviews to the owner, so the manager can ask for a raise.
-#
-# You will first build a model to distinguish positive reviews from negative reviews using Yelp reviews because these reviews include a rating with each review. Your data consists of the text body of each review along with the star rating. Ratings with 1-2 stars count as "negative", and ratings with 4-5 stars are "positive". Ratings with 3 stars are "neutral" and have been dropped from the data.
-#
-# Let's get started. First, run the next code cell.
+# # The manager wants you to create a tool that automatically sends him all the negative reviews so he can fix them, while automatically sending all the positive reviews to the owner, so the manager can ask for a raise.
+# # You will first build a model to distinguish positive reviews from negative reviews using Yelp reviews because these reviews include a rating with each review. Your data consists of the text body of each review along with the star rating. Ratings with 1-2 stars count as "negative", and ratings with 4-5 stars are "positive". Ratings with 3 stars are "neutral" and have been dropped from the data.
+# # Let's get started. First, run the next code cell.
 
 # CELL ********************
 
@@ -53,8 +50,7 @@ print("\nSetup complete")
 # MARKDOWN ********************
 
 # # Step 1: Evaluate the Approach
-#
-# Is there anything about this approach that concerns you? After you've thought about it, run the function below to see one point of view.
+# # Is there anything about this approach that concerns you? After you've thought about it, run the function below to see one point of view.
 
 # CELL ********************
 
@@ -106,8 +102,7 @@ train_texts, train_labels, val_texts, val_labels = load_data(
 # MARKDOWN ********************
 
 # You will use this training data to build a model. The code to build the model is the same as what you saw in the tutorial. So that is copied below for you.
-#
-# First, run the cell below to look at a couple elements from your training data.
+# # First, run the cell below to look at a couple elements from your training data.
 
 # CELL ********************
 
@@ -170,10 +165,8 @@ step_2.solution()
 # MARKDOWN ********************
 
 # # Step 3: Train Function
-#
-# Implement a function `train` that updates a model with training data. Most of this is general data munging, which we've filled in for you.
-#
-# Just add the one line of code necessary to update your model.
+# # Implement a function `train` that updates a model with training data. Most of this is general data munging, which we've filled in for you.
+# # Just add the one line of code necessary to update your model.
 
 # CELL ********************
 
@@ -326,8 +319,7 @@ for p, t in zip(predictions, texts):
 # # Step 5: Evaluate The Model
 # 
 # Implement a function that evaluates a `TextCategorizer` model. This function `evaluate` takes a model along with texts and labels. It returns the accuracy of the model, which is the number of correct predictions divided by all predictions.
-#
-# First, use the `predict` method you wrote earlier to get the predicted class for each text in `texts`. Then, find where the predicted labels match the true "gold-standard" labels and calculate the accuracy.
+# # First, use the `predict` method you wrote earlier to get the predicted class for each text in `texts`. Then, find where the predicted labels match the true "gold-standard" labels and calculate the accuracy.
 
 # CELL ********************
 

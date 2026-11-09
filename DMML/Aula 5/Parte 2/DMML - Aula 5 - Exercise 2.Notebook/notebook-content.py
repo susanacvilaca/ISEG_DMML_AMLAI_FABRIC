@@ -189,8 +189,7 @@ plot_mi_scores(mi_scores.head(20))
 # MARKDOWN ********************
 
 # # 2) Examine MI Scores
-#
-# Do the scores seem reasonable? Do the high scoring features represent things you'd think most people would value in a home? Do you notice any themes in what they describe?
+# # Do the scores seem reasonable? Do the high scoring features represent things you'd think most people would value in a home? Do you notice any themes in what they describe?
 
 # CELL ********************
 
@@ -217,8 +216,7 @@ q_2.check()
 # >       Duplx	Duplex
 # >       TwnhsE	Townhouse End Unit
 # >       TwnhsI	Townhouse Inside Unit
-#
-# The `BldgType` feature didn't get a very high MI score. A plot confirms that the categories in `BldgType` don't do a good job of distinguishing values in `SalePrice` (the distributions look fairly similar, in other words):
+# # The `BldgType` feature didn't get a very high MI score. A plot confirms that the categories in `BldgType` don't do a good job of distinguishing values in `SalePrice` (the distributions look fairly similar, in other words):
 
 # CELL ********************
 
@@ -286,8 +284,7 @@ q_3.check()
 # # A First Set of Development Features #
 # 
 # Let's take a moment to make a list of features we might focus on. In the exercise in Lesson 3, you'll start to build up a more informative feature set through combinations of the original features you identified as having high potential.
-#
-# You found that the ten features with the highest MI scores were:
+# # You found that the ten features with the highest MI scores were:
 
 # CELL ********************
 
@@ -303,6 +300,5 @@ mi_scores.head(10)
 # MARKDOWN ********************
 
 # Do you recognize the themes here? Location, size, and quality. You needn't restrict development to only these top features, but you do now have a good place to start. Combining these top features with other related features, especially those you've identified as creating interactions, is a good strategy for coming up with a highly informative set of features to train your model on.
-#
-# # Keep Going #
+# # # Keep Going #
 # 

@@ -28,9 +28,7 @@
 # MARKDOWN ********************
 
 # ## Decision Tree Classifier
-#
-#
-# In this exercise you will build a Decision Tree Classifier to predict the safety of the car.
+# # # In this exercise you will build a Decision Tree Classifier to predict the safety of the car.
 
 # CELL ********************
 
@@ -120,9 +118,7 @@ df = pd.read_csv(data, header=None)
 # MARKDOWN ********************
 
 # ## Exploratory data analysis
-#
-#
-# Now, we will explore the data to gain insights about the data.
+# # # Now, we will explore the data to gain insights about the data.
 
 # CELL ********************
 
@@ -161,8 +157,7 @@ df.head()
 # MARKDOWN ********************
 
 # ### Rename column names
-#
-# We can see that the dataset does not have proper column names. The columns are merely labelled as 0,1,2.... and so on. We should give proper names to the columns. I will do it as follows:-
+# # We can see that the dataset does not have proper column names. The columns are merely labelled as 0,1,2.... and so on. We should give proper names to the columns. I will do it as follows:-
 
 # CELL ********************
 
@@ -215,8 +210,7 @@ df.info()
 # MARKDOWN ********************
 
 # ### Frequency distribution of values in variables
-#
-# Now, I will check the frequency counts of categorical variables.
+# # Now, I will check the frequency counts of categorical variables.
 
 # CELL ********************
 
@@ -242,15 +236,9 @@ for col in col_names:
 # MARKDOWN ********************
 
 # ### Summary of variables
-#
-#
-# - There are 7 variables in the dataset. All the variables are of categorical data type.
-#
-#
-# - These are given by `buying`, `maint`, `doors`, `persons`, `lug_boot`, `safety` and `class`.
-#
-#
-# - `class` is the target variable.
+# # # - There are 7 variables in the dataset. All the variables are of categorical data type.
+# # # - These are given by `buying`, `maint`, `doors`, `persons`, `lug_boot`, `safety` and `class`.
+# # # - `class` is the target variable.
 
 # MARKDOWN ********************
 
@@ -313,8 +301,7 @@ y = df['class']
 # MARKDOWN ********************
 
 # # Step 1: Split data into separate training and test set
-#
-# Split the data into train and test with 0.33 test size and random_state=42
+# # Split the data into train and test with 0.33 test size and random_state=42
 
 
 # CELL ********************
@@ -359,12 +346,8 @@ X_train.shape, X_test.shape
 # MARKDOWN ********************
 
 # ## Feature Engineering
-#
-#
-# **Feature Engineering** is the process of transforming raw data into useful features that help us to understand our model better and increase its predictive power. We will carry out feature engineering on different types of variables.
-#
-#
-# First, we will check the data types of variables again.
+# # # **Feature Engineering** is the process of transforming raw data into useful features that help us to understand our model better and increase its predictive power. We will carry out feature engineering on different types of variables.
+# # # First, we will check the data types of variables again.
 
 # CELL ********************
 
@@ -382,9 +365,7 @@ X_train.dtypes
 # MARKDOWN ********************
 
 # ### Encode categorical variables
-#
-#
-# Now, we will encode the categorical variables.
+# # # Now, we will encode the categorical variables.
 
 # CELL ********************
 
@@ -526,9 +507,7 @@ print('Model accuracy score with criterion entropy: {0:0.4f}'. format(accuracy_s
 # MARKDOWN ********************
 
 # ### Compare the train-set and test-set accuracy
-#
-#
-# Now, we will compare the train-set and test-set accuracy to check for overfitting.
+# # # Now, we will compare the train-set and test-set accuracy to check for overfitting.
 
 # CELL ********************
 
@@ -623,18 +602,13 @@ plt.show()
 # MARKDOWN ********************
 
 # Now, based on the above analysis we can conclude that our classification model accuracy is very good. Our model is doing a very good job in terms of predicting the class labels.
-#
-#
-# But, it does not give the underlying distribution of values. Also, it does not tell anything about the type of errors our classifer is making.
-#
-#
-# We have another tool called `Confusion matrix` that comes to our rescue.
+# # # But, it does not give the underlying distribution of values. Also, it does not tell anything about the type of errors our classifer is making.
+# # # We have another tool called `Confusion matrix` that comes to our rescue.
 
 # MARKDOWN ********************
 
 # # Step 3: Calculate Confusion matrix
-#
-# Create the confusion matrix
+# # Create the confusion matrix
 
 # CELL ********************
 
@@ -665,11 +639,8 @@ step_3.solution()
 # MARKDOWN ********************
 
 # ## Classification Report
-#
-#
-# **Classification report** is another way to evaluate the classification model performance. It displays the  **precision**, **recall**, **f1** and **support** scores for the model.
-#
-# We can print a classification report as follows:-
+# # # **Classification report** is another way to evaluate the classification model performance. It displays the  **precision**, **recall**, **f1** and **support** scores for the model.
+# # We can print a classification report as follows:-
 
 # CELL ********************
 
@@ -687,5 +658,4 @@ print(classification_report(y_test, y_pred_en))
 # MARKDOWN ********************
 
 # # Keep going
-#
-# You have finished the first part with decision tree, it is time to move to the next one !
+# # You have finished the first part with decision tree, it is time to move to the next one !

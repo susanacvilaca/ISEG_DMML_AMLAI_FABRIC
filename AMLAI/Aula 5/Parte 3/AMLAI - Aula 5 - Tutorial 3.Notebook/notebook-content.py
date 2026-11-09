@@ -18,16 +18,11 @@
 # MARKDOWN ********************
 
 # # Word Embeddings
-#
-# You know at this point that machine learning on text requires that you first represent the text numerically. So far, you've done this with bag of words representations. But you can usually do better with word embeddings.
-#
-# **Word embeddings** (also called word vectors) represent each word numerically in such a way that the vector corresponds to how that word is used or what it means. Vector encodings are learned by considering the context in which the words appear. Words that appear in similar contexts will have similar vectors. For example, vectors for "leopard", "lion", and "tiger" will be close together, while they'll be far away from "planet" and "castle".
-#
-# Even cooler, relations between words can be examined with mathematical operations. Subtracting the vectors for "man" and "woman" will return another vector. If you add that to the vector for "king" the result is close to the vector for "queen."
-#
-# ![Word vector examples](https://www.tensorflow.org/images/linear-relationships.png)
-#
-# These vectors can be used as features for machine learning models. Word vectors will typically improve the performance of your models above bag of words encoding. spaCy provides embeddings learned from a model called Word2Vec. You can access them by loading a large language model like `en_core_web_lg`. Then they will be available on tokens from the `.vector` attribute.
+# # You know at this point that machine learning on text requires that you first represent the text numerically. So far, you've done this with bag of words representations. But you can usually do better with word embeddings.
+# # **Word embeddings** (also called word vectors) represent each word numerically in such a way that the vector corresponds to how that word is used or what it means. Vector encodings are learned by considering the context in which the words appear. Words that appear in similar contexts will have similar vectors. For example, vectors for "leopard", "lion", and "tiger" will be close together, while they'll be far away from "planet" and "castle".
+# # Even cooler, relations between words can be examined with mathematical operations. Subtracting the vectors for "man" and "woman" will return another vector. If you add that to the vector for "king" the result is close to the vector for "queen."
+# # ![Word vector examples](https://www.tensorflow.org/images/linear-relationships.png)
+# # These vectors can be used as features for machine learning models. Word vectors will typically improve the performance of your models above bag of words encoding. spaCy provides embeddings learned from a model called Word2Vec. You can access them by loading a large language model like `en_core_web_lg`. Then they will be available on tokens from the `.vector` attribute.
 
 # CELL ********************
 
@@ -98,10 +93,8 @@ vectors.shape
 # MARKDOWN ********************
 
 # These are 300-dimensional vectors, with one vector for each word. However, we only have document-level labels and our models won't be able to use the word-level embeddings. So, you need a vector representation for the entire document.
-#
-# There are many ways to combine all the word vectors into a single document vector we can use for model training. A simple and surprisingly effective approach is simply averaging the vectors for each word in the document. Then, you can use these document vectors for modeling.
-#
-# spaCy calculates the average document vector which you can get with `doc.vector`. Here is an example loading the spam data and converting it to document vectors.
+# # There are many ways to combine all the word vectors into a single document vector we can use for model training. A simple and surprisingly effective approach is simply averaging the vectors for each word in the document. Then, you can use these document vectors for modeling.
+# # spaCy calculates the average document vector which you can get with `doc.vector`. Here is an example loading the spam data and converting it to document vectors.
 
 # CELL ********************
 
@@ -126,8 +119,7 @@ doc_vectors.shape
 # MARKDOWN ********************
 
 # ## Classification Models
-#
-# With the document vectors, you can train scikit-learn models, xgboost models, or any other standard approach to modeling.
+# # With the document vectors, you can train scikit-learn models, xgboost models, or any other standard approach to modeling.
 
 # CELL ********************
 
@@ -166,14 +158,11 @@ print(f"Accuracy: {svc.score(X_test, y_test) * 100:.3f}%", )
 # MARKDOWN ********************
 
 # ## Document Similarity
-#
-# Documents with similar content generally have similar vectors. So you can find similar documents by measuring the similarity between the vectors. A common metric for this is the **cosine similarity** which measures the angle between two vectors, $\mathbf{a}$ and $\mathbf{b}$.
-#
-# $$
+# # Documents with similar content generally have similar vectors. So you can find similar documents by measuring the similarity between the vectors. A common metric for this is the **cosine similarity** which measures the angle between two vectors, $\mathbf{a}$ and $\mathbf{b}$.
+# # $$
 # \cos \theta = \frac{\mathbf{a}\cdot\mathbf{b}}{\| \mathbf{a} \| \, \| \mathbf{b} \|}
 # $$
-#
-# This is the dot product of $\mathbf{a}$ and $\mathbf{b}$, divided by the magnitudes of each vector. The cosine similarity can vary between -1 and 1, corresponding complete opposite to perfect similarity, respectively. To calculate it, you can use [the metric from scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html) or write your own function.
+# # This is the dot product of $\mathbf{a}$ and $\mathbf{b}$, divided by the magnitudes of each vector. The cosine similarity can vary between -1 and 1, corresponding complete opposite to perfect similarity, respectively. To calculate it, you can use [the metric from scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html) or write your own function.
 
 # CELL ********************
 

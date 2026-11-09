@@ -75,7 +75,8 @@ reviews.head()
 
 # CELL ********************
 
-median_points = ____
+median_points = reviews['points'].median()
+median_points
 
 # Check your answer
 q1.check()
@@ -106,7 +107,7 @@ q1.check()
 
 # CELL ********************
 
-countries = ____
+countries = reviews['country'].unique()
 
 # Check your answer
 q2.check()
@@ -137,7 +138,7 @@ q2.check()
 
 # CELL ********************
 
-reviews_per_country = ____
+reviews_per_country = reviews['country'].value_counts()
 
 # Check your answer
 q3.check()
@@ -170,7 +171,8 @@ q3.check()
 
 # CELL ********************
 
-centered_price = ____
+mean_price = reviews['price'].mean()
+centered_price = reviews['price'] - mean_price
 
 # Check your answer
 q4.check()
@@ -201,7 +203,8 @@ q4.check()
 
 # CELL ********************
 
-bargain_wine = ____
+bargain_idx = (reviews.points / reviews.price).idxmax()
+bargain_wine = reviews.loc[bargain_idx, 'title']
 
 # Check your answer
 q5.check()
@@ -232,7 +235,10 @@ q5.check()
 
 # CELL ********************
 
-descriptor_counts = ____
+descriptor_counts = pd.Series({
+    "tropical": reviews['description'].str.contains("tropical", na=False).sum(),
+    "fruity": reviews['description'].str.contains("fruity", na=False).sum()
+})
 
 # Check your answer
 q6.check()
@@ -267,7 +273,15 @@ q6.check()
 
 # CELL ********************
 
-star_ratings = ____
+def assign_stars(row):
+    if row['country'] == "Canada" or row['points'] >= 95:
+        return 3
+    elif row['points'] >= 85:
+        return 2
+    else:
+        return 1
+
+star_ratings = reviews.apply(assign_stars, axis=1)
 
 # Check your answer
 q7.check()

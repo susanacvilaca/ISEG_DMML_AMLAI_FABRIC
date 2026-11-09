@@ -41,8 +41,7 @@
 # ```
 # error=actual−predicted
 # ```
-#
-# So, if a house cost \$150,000 and you predicted it would cost \$100,000 the error is \$50,000.
+# # So, if a house cost \$150,000 and you predicted it would cost \$100,000 the error is \$50,000.
 # 
 # With the MAE metric, we take the absolute value of each error. This converts each error to a positive number. We then take the average of those absolute errors. This is our measure of model quality. In plain English, it can be said as
 # 
@@ -109,18 +108,13 @@ mean_absolute_error(y, predicted_home_prices)
 # However, in the sample of data you used to build the model, all homes with green doors were very expensive. The model's job is to find patterns that predict home prices, so it will see this pattern, and it will always predict high prices for homes with green doors.
 # 
 # Since this pattern was derived from the training data, the model will appear accurate in the training data.
-#
-# But if this pattern doesn't hold when the model sees new data, the model would be very inaccurate when used in practice.
-#
-# Since models' practical value come from making predictions on new data, we measure performance on data that wasn't used to build the model. The most straightforward way to do this is to exclude some data from the model-building process, and then use those to test the model's accuracy on data it hasn't seen before. This data is called **validation data**.
-#
-#
-# # Coding It
+# # But if this pattern doesn't hold when the model sees new data, the model would be very inaccurate when used in practice.
+# # Since models' practical value come from making predictions on new data, we measure performance on data that wasn't used to build the model. The most straightforward way to do this is to exclude some data from the model-building process, and then use those to test the model's accuracy on data it hasn't seen before. This data is called **validation data**.
+# # # # Coding It
 # 
 # 
 # The scikit-learn library has a function `train_test_split` to break up the data into two pieces. We'll use some of that data as training data to fit the model, and we'll use the other data as validation data to calculate `mean_absolute_error`.
-#
-# Here is the code:
+# # Here is the code:
 
 
 # CELL ********************

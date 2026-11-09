@@ -26,8 +26,7 @@
 # MARKDOWN ********************
 
 # # AMLAI - Aula 2 - Tutorial 2 - Part 1 #
-#
-# ## Ingest data into a Microsoft Fabric lakehouse using Apache Spark
+# # ## Ingest data into a Microsoft Fabric lakehouse using Apache Spark
 # 
 # In this tutorial, you'll ingest data into Fabric lakehouses in delta lake format. Some important terms to understand:
 # 

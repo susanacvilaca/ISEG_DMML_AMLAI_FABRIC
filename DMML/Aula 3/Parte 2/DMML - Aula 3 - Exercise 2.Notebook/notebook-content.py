@@ -28,17 +28,11 @@
 # MARKDOWN ********************
 
 # # Introduction
-#
-# In the exercise, you will work with data from the TalkingData AdTracking.  The goal is to predict if a user will download an app after clicking through an ad.
-#
-#
-# For this course you will use a small sample of the data, dropping 99% of negative records (where the app wasn't downloaded) to make the target more balanced.
-#
-# After building a baseline model, you'll be able to see how your feature engineering and selection efforts improve the model's performance.
-#
-# ## Setup
-#
-# Begin by running the code cell below to set up the exercise.
+# # In the exercise, you will work with data from the TalkingData AdTracking.  The goal is to predict if a user will download an app after clicking through an ad.
+# # # For this course you will use a small sample of the data, dropping 99% of negative records (where the app wasn't downloaded) to make the target more balanced.
+# # After building a baseline model, you'll be able to see how your feature engineering and selection efforts improve the model's performance.
+# # ## Setup
+# # Begin by running the code cell below to set up the exercise.
 
 # CELL ********************
 
@@ -68,8 +62,7 @@ from learntools.feature_engineering.ex1 import *
 # MARKDOWN ********************
 
 # ## Baseline Model
-#
-# The first thing you'll do is construct a baseline model. We'll begin by looking at the data.
+# # The first thing you'll do is construct a baseline model. We'll begin by looking at the data.
 
 # CELL ********************
 
@@ -89,12 +82,9 @@ click_data.head()
 # MARKDOWN ********************
 
 # ### 1) Construct features from timestamps
-#
-# Notice that the `click_data` DataFrame has a `'click_time'` column with timestamp data.
-#
-# Use this column to create features for the coresponding day, hour, minute and second.
-#
-# Store these as new integer columns `day`, `hour`, `minute`, and `second` in a new DataFrame `clicks`.
+# # Notice that the `click_data` DataFrame has a `'click_time'` column with timestamp data.
+# # Use this column to create features for the coresponding day, hour, minute and second.
+# # Store these as new integer columns `day`, `hour`, `minute`, and `second` in a new DataFrame `clicks`.
 
 # CELL ********************
 
@@ -185,12 +175,9 @@ clicks.head()
 # MARKDOWN ********************
 
 # ### 3) One-hot Encoding
-#
-# In the code cell above, you used label encoded features.  Would it have also made sense to instead use one-hot encoding for the categorical variables `'ip'`, `'app'`, `'device'`, `'os'`, or `'channel'`?
-#
-# **Note**: If you're not familiar with one-hot encoding, please check out aula 3.
-#
-# Run the following line after you've decided your answer.
+# # In the code cell above, you used label encoded features.  Would it have also made sense to instead use one-hot encoding for the categorical variables `'ip'`, `'app'`, `'device'`, `'os'`, or `'channel'`?
+# # **Note**: If you're not familiar with one-hot encoding, please check out aula 3.
+# # Run the following line after you've decided your answer.
 
 # CELL ********************
 

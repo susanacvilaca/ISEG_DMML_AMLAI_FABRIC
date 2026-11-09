@@ -18,13 +18,10 @@
 # MARKDOWN ********************
 
 # # Basic Text Processing with Spacy
-#
-# You're a consultant for [DelFalco's Italian Restaurant](https://defalcosdeli.com/index.html).
+# # You're a consultant for [DelFalco's Italian Restaurant](https://defalcosdeli.com/index.html).
 # The owner asked you to identify whether there are any foods on their menu that diners find disappointing.
-#
-# <img src="https://storage.googleapis.com/kaggle-media/learn/images/8DZunAQ.jpg" alt="Meatball Sub" width="250"/>
-#
-# Before getting started, run the following cell to set up code checking.
+# # <img src="https://storage.googleapis.com/kaggle-media/learn/images/8DZunAQ.jpg" alt="Meatball Sub" width="250"/>
+# # Before getting started, run the following cell to set up code checking.
 
 # CELL ********************
 
@@ -114,8 +111,7 @@ menu = ["Cheese Steak", "Cheesesteak", "Steak and Cheese", "Italian Combo", "Tir
 # MARKDOWN ********************
 
 # Given the data from Yelp and the list of menu items, do you have any ideas for how you could find which menu items have disappointed diners?
-#
-# Think about your answer. Then run the cell below to see one approach.
+# # Think about your answer. Then run the cell below to see one approach.
 
 # CELL ********************
 
@@ -132,14 +128,10 @@ q_1.solution()
 # MARKDOWN ********************
 
 # # Step 2: Find items in one review
-#
-# You'll pursue this plan of calculating average scores of the reviews mentioning each menu item.
-#
-# As a first step, you'll write code to extract the foods mentioned in a single review.
-#
-# Since menu items are multiple tokens long, you'll use `PhraseMatcher` which can match series of tokens.
-#
-# Fill in the `____` values below to get a list of items matching a single menu item.
+# # You'll pursue this plan of calculating average scores of the reviews mentioning each menu item.
+# # As a first step, you'll write code to extract the foods mentioned in a single review.
+# # Since menu items are multiple tokens long, you'll use `PhraseMatcher` which can match series of tokens.
+# # Fill in the `____` values below to get a list of items matching a single menu item.
 
 # CELL ********************
 
@@ -215,12 +207,9 @@ q_2.solution()
 # MARKDOWN ********************
 
 # # Step 3: Matching on the whole dataset
-#
-# Now run this matcher over the whole dataset and collect ratings for each menu item. Each review has a rating, `review.stars`. For each item that appears in the review text (`review.text`), append the review's rating to a list of ratings for that item. The lists are kept in a dictionary `item_ratings`.
-#
-# To get the matched phrases, you can reference the `PhraseMatcher` documentation for the structure of each match object:
-#
-# >A list of `(match_id, start, end)` tuples, describing the matches. A match tuple describes a span `doc[start:end]`. The `match_id` is the ID of the added match pattern.
+# # Now run this matcher over the whole dataset and collect ratings for each menu item. Each review has a rating, `review.stars`. For each item that appears in the review text (`review.text`), append the review's rating to a list of ratings for that item. The lists are kept in a dictionary `item_ratings`.
+# # To get the matched phrases, you can reference the `PhraseMatcher` documentation for the structure of each match object:
+# # >A list of `(match_id, start, end)` tuples, describing the matches. A match tuple describes a span `doc[start:end]`. The `match_id` is the ID of the added match pattern.
 
 # CELL ********************
 
@@ -267,8 +256,7 @@ q_3.solution()
 # MARKDOWN ********************
 
 # # Step 4: What's the worst reviewed item?
-#
-# Using these item ratings, find the menu item with the worst average rating.
+# # Using these item ratings, find the menu item with the worst average rating.
 
 # CELL ********************
 
@@ -318,8 +306,7 @@ q_4.solution()
 # MARKDOWN ********************
 
 # # Step 5: Are counts important here?
-#
-# Similar to the mean ratings, you can calculate the number of reviews for each item.
+# # Similar to the mean ratings, you can calculate the number of reviews for each item.
 
 # CELL ********************
 
@@ -378,5 +365,4 @@ q_5.solution()
 # MARKDOWN ********************
 
 # # Keep Going
-#
-# Now that you are ready to combine your NLP skills with your ML skills, **[see how it's done](#$NEXT_NOTEBOOK_URL$)**.
+# # Now that you are ready to combine your NLP skills with your ML skills, **[see how it's done](#$NEXT_NOTEBOOK_URL$)**.

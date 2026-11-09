@@ -76,6 +76,7 @@ print("Setup Complete")
 # CELL ********************
 
 # print the list of columns in the dataset to find the name of the prediction target
+home_data.columns
 
 
 # METADATA ********************
@@ -87,7 +88,7 @@ print("Setup Complete")
 
 # CELL ********************
 
-y = ____
+y = home_data.SalePrice
 
 # Check your answer
 step_1.check()
@@ -133,10 +134,10 @@ step_1.check()
 # CELL ********************
 
 # Create the list of features below
-feature_names = ____
+feature_names = ['LotArea', 'YearBuilt', '1stFlrSF', '2ndFlrSF', 'FullBath', 'BedroomAbvGr', 'TotRmsAbvGrd']
 
 # Select data corresponding to features in feature_names
-X = ____
+X = home_data[feature_names]
 
 # Check your answer
 step_2.check()
@@ -169,10 +170,10 @@ step_2.check()
 
 # Review data
 # print description or statistics from X
-#print(_)
+X.describe()
 
 # print the top few lines
-#print(_)
+X.head()
 
 # METADATA ********************
 
@@ -190,13 +191,13 @@ step_2.check()
 
 # CELL ********************
 
-# from _ import _
+from sklearn.tree import DecisionTreeRegressor
 #specify the model. 
 #For model reproducibility, set a numeric value for random_state when specifying the model
-iowa_model = ____
+iowa_model = DecisionTreeRegressor(random_state=1)
 
 # Fit the model
-____
+iowa_model.fit(X,y)
 
 # Check your answer
 step_3.check()
@@ -227,7 +228,7 @@ step_3.check()
 
 # CELL ********************
 
-predictions = ____
+predictions = iowa_model.predict(X)
 print(predictions)
 
 # Check your answer
@@ -243,7 +244,7 @@ step_4.check()
 # CELL ********************
 
 #step_4.hint()
-#step_4.solution()
+step_4.solution()
 
 # METADATA ********************
 
@@ -274,4 +275,4 @@ step_4.check()
 # MARKDOWN ********************
 
 # It's natural to ask how accurate the model's predictions will be and how you can improve that. That will be you're next step.
-# 
+

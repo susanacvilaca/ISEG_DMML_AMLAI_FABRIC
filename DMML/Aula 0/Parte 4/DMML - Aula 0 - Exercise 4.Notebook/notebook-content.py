@@ -74,10 +74,12 @@ print("Setup complete.")
 # CELL ********************
 
 # Your code here
-reviews_written = ____
+reviews_written = reviews.groupby("taster_twitter_handle").size()
+reviews_written.sort_values (ascending=False)
 
 # Check your answer
 q1.check()
+reviews
 
 # METADATA ********************
 
@@ -105,7 +107,7 @@ q1.check()
 
 # CELL ********************
 
-best_rating_per_price = ____
+best_rating_per_price = reviews.groupby('price')['points'].max().sort_index()
 
 # Check your answer
 q2.check()
@@ -136,7 +138,7 @@ q2.check()
 
 # CELL ********************
 
-price_extremes = ____
+price_extremes = reviews.groupby('variety')['price'].agg(['min', 'max'])
 
 # Check your answer
 q3.check()
@@ -167,7 +169,7 @@ q3.check()
 
 # CELL ********************
 
-sorted_varieties = ____
+sorted_varieties = price_extremes.sort_values(by=['min', 'max'], ascending=False)
 
 # Check your answer
 q4.check()
@@ -198,7 +200,7 @@ q4.check()
 
 # CELL ********************
 
-reviewer_mean_ratings = ____
+reviewer_mean_ratings = reviews.groupby("taster_name")["points"].mean()
 
 # Check your answer
 q5.check()
@@ -232,7 +234,7 @@ reviewer_mean_ratings.describe()
 
 # CELL ********************
 
-country_variety_counts = ____
+country_variety_counts = reviews.groupby(["country", "variety"]).size().sort_values(ascending=False)
 
 # Check your answer
 q6.check()

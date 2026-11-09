@@ -49,35 +49,26 @@ from IPython.display import Image
 # MARKDOWN ********************
 
 # Performance metrics are vital for supervised machine learning models. To be sure that your model is doing well in its predictions, you need to evaluate the model. Our goal is to identify how well the model performs on new data.
-#
-# There are some evaluation metrics that can help you determine whether the model’s predictions are accurate to a certain level of performance.
+# # There are some evaluation metrics that can help you determine whether the model’s predictions are accurate to a certain level of performance.
 
 # MARKDOWN ********************
 
 # # 2. Regression Evaluation Metrics
-#
-# All of these are **loss functions**, because we want to minimize them.
-#
-# ## 2.1 Mean Absolute Error (MAE)
+# # All of these are **loss functions**, because we want to minimize them.
+# # ## 2.1 Mean Absolute Error (MAE)
 # is the mean of the absolute value of the errors:
-#
-# $$\frac 1n\sum_{i=1}^n|y_i-\hat{y}_i|$$
-#
-# The Mean absolute error represents the average of the absolute difference between the actual and predicted values in the dataset. It measures the average of the residuals in the dataset.
-#
-# ## 2.2 Mean Squared Error (MSE)
+# # $$\frac 1n\sum_{i=1}^n|y_i-\hat{y}_i|$$
+# # The Mean absolute error represents the average of the absolute difference between the actual and predicted values in the dataset. It measures the average of the residuals in the dataset.
+# # ## 2.2 Mean Squared Error (MSE)
 # is the mean of the squared errors:
-#
-# $$\frac 1n\sum_{i=1}^n(y_i-\hat{y}_i)^2$$
-#
-# Mean Squared Error represents the average of the squared difference between the original and predicted values in the data set. It measures the variance of the residuals.
+# # $$\frac 1n\sum_{i=1}^n(y_i-\hat{y}_i)^2$$
+# # Mean Squared Error represents the average of the squared difference between the original and predicted values in the data set. It measures the variance of the residuals.
 # 
 # ## 2.3 Root Mean Squared Error (RMSE)
 # is the square root of the mean of the squared errors:
 # 
 # $$\sqrt{\frac 1n\sum_{i=1}^n(y_i-\hat{y}_i)^2}$$
-#
-# RMSE measures the standard deviation of residuals.
+# # RMSE measures the standard deviation of residuals.
 
 # MARKDOWN ********************
 
@@ -94,8 +85,7 @@ from IPython.display import Image
 # Sum of Squares Regression (SSR or RSS) is the sum of the differences between the predicted value and the mean of the dependent variable.
 # 
 # 3. **SSE** (or ESS)
-#
-# Sum of Squares Error (SSE or ESS) is the difference between the observed value and the predicted value.
+# # Sum of Squares Error (SSE or ESS) is the difference between the observed value and the predicted value.
 
 # MARKDOWN ********************
 
@@ -182,14 +172,10 @@ from IPython.display import Image
 # MARKDOWN ********************
 
 # ## 2.6 Cross-validated R2
-#
-# We will look to this on in the next class. You can pass it by now.
-#
-# Cross-validation is a resampling procedure used to evaluate machine learning models on a limited data sample. It is a popular method because it is simple to understand and because it generally results in a less biased or less optimistic estimate of the model skill than other methods, such as a simple train/test split.
-#
-# The procedure has a single parameter called k that refers to the number of groups that a given data sample is to be split into. As such, the procedure is often called k-fold cross-validation. When a specific value for k is chosen, it may be used in place of k in the reference to the model, such as k=10 becoming 10-fold cross-validation.
-#
-# **Cross-validated R2** is a median value or R2 taken from cross-validation procedure.
+# # We will look to this on in the next class. You can pass it by now.
+# # Cross-validation is a resampling procedure used to evaluate machine learning models on a limited data sample. It is a popular method because it is simple to understand and because it generally results in a less biased or less optimistic estimate of the model skill than other methods, such as a simple train/test split.
+# # The procedure has a single parameter called k that refers to the number of groups that a given data sample is to be split into. As such, the procedure is often called k-fold cross-validation. When a specific value for k is chosen, it may be used in place of k in the reference to the model, such as k=10 becoming 10-fold cross-validation.
+# # **Cross-validated R2** is a median value or R2 taken from cross-validation procedure.
 
 # MARKDOWN ********************
 
@@ -206,10 +192,8 @@ from IPython.display import Image
 # MARKDOWN ********************
 
 # ## 2.7 Regression Evaluation Metrics - Conclusion
-#
-# Both RMSE and R-Squared quantifies how well a linear regression model fits a dataset. When assessing how well a model fits a dataset, it’s useful to calculate both the RMSE and the R2 value because each metric tells us something different.
-#
-# * **RMSE** tells us the typical distance between the predicted value made by the regression model and the actual value.
+# # Both RMSE and R-Squared quantifies how well a linear regression model fits a dataset. When assessing how well a model fits a dataset, it’s useful to calculate both the RMSE and the R2 value because each metric tells us something different.
+# # * **RMSE** tells us the typical distance between the predicted value made by the regression model and the actual value.
 # 
 # * **R2** tells us how well the predictor variables can explain the variation in the response variable.
 # 
@@ -282,35 +266,22 @@ def Reg_Models_Evaluation_Metrics (model,X_train,y_train,X_test,y_test,y_pred):
 # MARKDOWN ********************
 
 # ## 3.3 Data Sets Characteristics
-#
-# ### Avocado Prices
-#
-#
-# Some relevant columns in the dataset:
-#
-#  - Date - The date of the observation
-#
-#  - AveragePrice - the average price of a single avocado
-#
-#  - type - conventional or organic
-#
-#  - year - the year
-#
-#  - Region - the city or region of the observation
+# # ### Avocado Prices
+# # # Some relevant columns in the dataset:
+# #  - Date - The date of the observation
+# #  - AveragePrice - the average price of a single avocado
+# #  - type - conventional or organic
+# #  - year - the year
+# #  - Region - the city or region of the observation
 # 
 #  - Total Volume - Total number of avocados sold
 # 
 #  - 4046 - Total number of avocados with PLU 4046 sold
-#
-#  - 4225 - Total number of avocados with PLU 4225 sold
-#
-#  - 4770 - Total number of avocados with PLU 4770 sold
-#
-# Missing values: None
-#
-# Duplicate entries: None
-#
-
+# #  - 4225 - Total number of avocados with PLU 4225 sold
+# #  - 4770 - Total number of avocados with PLU 4770 sold
+# # Missing values: None
+# # Duplicate entries: None
+# 
 
 # MARKDOWN ********************
 
@@ -458,24 +429,16 @@ df1 = ohe.drop(['Date','4046','4225','4770','Small Bags','Large Bags','XLarge Ba
 # MARKDOWN ********************
 
 # We have a significant problems with outliers in both data sets:
-#
-# * most of the distributions are not normal;
-#
-# * huge outliers;
-#
-# * higly right-skeved data in Avocado Prices data set;
-#
-# * a lot of outliers.
+# # * most of the distributions are not normal;
+# # * huge outliers;
+# # * higly right-skeved data in Avocado Prices data set;
+# # * a lot of outliers.
 # 
 # Tukey’s (1977) technique is used to detect outliers in skewed or non bell-shaped data since it makes no distributional assumptions. However, Tukey’s method may not be appropriate for a small sample size. The general rule is that anything not in the range of (Q1 - 1.5 IQR) and (Q3 + 1.5 IQR) is an outlier, and can be removed.
-#
-# Inter Quartile Range (IQR) is one of the most extensively used procedure for outlier detection and removal.
-#
-# There are other methods for detecting the outliers for example by using Standard deviation method or Z-score method. Here we use Tukey's IQR method method
-#
-# Procedure:
-#
-# 1. Find the first quartile, Q1.
+# # Inter Quartile Range (IQR) is one of the most extensively used procedure for outlier detection and removal.
+# # There are other methods for detecting the outliers for example by using Standard deviation method or Z-score method. Here we use Tukey's IQR method method
+# # Procedure:
+# # 1. Find the first quartile, Q1.
 # 2. Find the third quartile, Q3.
 # 3. Calculate the IQR. IQR = Q3-Q1.
 # 4. Define the normal data range with lower limit as Q1–1.5 IQR and upper limit as Q3+1.5 IQR.

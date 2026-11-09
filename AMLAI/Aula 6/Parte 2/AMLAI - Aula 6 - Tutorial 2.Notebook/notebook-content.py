@@ -55,20 +55,15 @@
 # target = a * time ** 2 + b * time + c
 # ```
 # Linear regression will learn the coefficients `a`, `b,` and `c`.
-#
-# The trend curves in the figure below were both fit using these kinds of features and scikit-learn's `LinearRegression`:
-#
-# <figure style="padding: 1em;">
+# # The trend curves in the figure below were both fit using these kinds of features and scikit-learn's `LinearRegression`:
+# # <figure style="padding: 1em;">
 # <img src="https://storage.googleapis.com/kaggle-media/learn/images/KFYlgGm.png" width=*00, alt="Above, Cars Sold in Quebec: an undulating plot gradually increasing from 1960-01 to 1968-12 with a linear trend-line superimposed. Below, Plastics Production in Australia: an undulating plot with a concave-up quadratic trend-line superimposed.">
 # <figcaption style="textalign: center; font-style: italic"><center><strong>Top:</strong> Series with a linear trend. <strong>Below:</strong> Series with a quadratic trend.
 # </center></figcaption>
 # </figure>
-#
-# If you haven't seen the trick before, you may not have realized that linear regression can fit curves other than lines. The idea is that if you can provide curves of the appropriate shape as features, then linear regression can learn how to combine them in the way that best fits the target.
-#
-# # Example - Tunnel Traffic #
-#
-# In this example we'll create a trend model for the *Tunnel Traffic* dataset.
+# # If you haven't seen the trick before, you may not have realized that linear regression can fit curves other than lines. The idea is that if you can provide curves of the appropriate shape as features, then linear regression can learn how to combine them in the way that best fits the target.
+# # # Example - Tunnel Traffic #
+# # In this example we'll create a trend model for the *Tunnel Traffic* dataset.
 
 # CELL ********************
 
@@ -117,8 +112,7 @@ tunnel = tunnel.set_index("Day").to_period()
 # MARKDOWN ********************
 
 # Let's make a moving average plot to see what kind of trend this series has. Since this series has daily observations, let's choose a window of 365 days to smooth over any short-term changes within the year.
-#
-# To create a moving average, first use the `rolling` method to begin a windowed computation. Follow this by the `mean` method to compute the average over the window. As we can see, the trend of *Tunnel Traffic* appears to be about linear.
+# # To create a moving average, first use the `rolling` method to begin a windowed computation. Follow this by the `mean` method to compute the average over the window. As we can see, the trend of *Tunnel Traffic* appears to be about linear.
 
 # CELL ********************
 
@@ -169,8 +163,7 @@ X.head()
 # MARKDOWN ********************
 
 # (A *deterministic process*, by the way, is a technical term for a time series that is non-random or completely *determined*, like the `const` and `trend` series are. Features derived from the time index will generally be deterministic.)
-#
-# We create our trend model basically as before, though note the addition of the `fit_intercept=False` argument.
+# # We create our trend model basically as before, though note the addition of the `fit_intercept=False` argument.
 
 # CELL ********************
 
@@ -249,9 +242,6 @@ _ = ax.legend()
 # MARKDOWN ********************
 
 # ---
-#
-# The trend models we learned about in this lesson turn out to be useful for a number of reasons. Besides acting as a baseline or starting point for more sophisticated models, we can also use them as a component in a "hybrid model" with algorithms unable to learn trends (like XGBoost and random forests). We'll learn more about this technique in Lesson 5.
-#
-# # Your Turn #
-#
-# [**Model trend in Store Sales**] and understand the risks of forecasting with high-order polynomials.
+# # The trend models we learned about in this lesson turn out to be useful for a number of reasons. Besides acting as a baseline or starting point for more sophisticated models, we can also use them as a component in a "hybrid model" with algorithms unable to learn trends (like XGBoost and random forests). We'll learn more about this technique in Lesson 5.
+# # # Your Turn #
+# # [**Model trend in Store Sales**] and understand the risks of forecasting with high-order polynomials.

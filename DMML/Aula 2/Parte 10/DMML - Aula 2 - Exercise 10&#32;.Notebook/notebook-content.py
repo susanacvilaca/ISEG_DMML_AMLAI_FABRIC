@@ -28,10 +28,8 @@
 # MARKDOWN ********************
 
 # In this exercise, you'll apply what you learned in the **Character encodings** tutorial.
-#
-# # Setup
-#
-# The questions below will give you feedback on your work. Run the following cell to set up the feedback system.
+# # # Setup
+# # The questions below will give you feedback on your work. Run the following cell to set up the feedback system.
 
 # CELL ********************
 
@@ -61,8 +59,7 @@ print("Setup Complete")
 # MARKDOWN ********************
 
 # # Get our environment set up
-#
-# The first thing we'll need to do is load in the libraries we'll be using.
+# # The first thing we'll need to do is load in the libraries we'll be using.
 
 # CELL ********************
 
@@ -86,8 +83,7 @@ np.random.seed(0)
 # MARKDOWN ********************
 
 # # 1) What are encodings?
-#
-# You're working with a dataset composed of bytes.  Run the code cell below to print a sample entry.
+# # You're working with a dataset composed of bytes.  Run the code cell below to print a sample entry.
 
 # CELL ********************
 
@@ -105,8 +101,7 @@ print('data type:', type(sample_entry))
 # MARKDOWN ********************
 
 # You notice that it doesn't use the standard UTF-8 encoding.
-#
-# Use the next code cell to create a variable `new_entry` that changes the encoding from `"big5-tw"` to `"utf-8"`.  `new_entry` should have the bytes datatype.
+# # Use the next code cell to create a variable `new_entry` that changes the encoding from `"big5-tw"` to `"utf-8"`.  `new_entry` should have the bytes datatype.
 
 # CELL ********************
 
@@ -138,10 +133,8 @@ q1.solution()
 # MARKDOWN ********************
 
 # # 2) Reading in files with encoding problems
-#
-# Use the code cell below to read in this file at path `"/lakehouse/default/Files/DMML_Aula2/PoliceKillingsUS.csv"`.
-#
-# Figure out what the correct encoding should be and read in the file to a DataFrame `police_killings`.
+# # Use the code cell below to read in this file at path `"/lakehouse/default/Files/DMML_Aula2/PoliceKillingsUS.csv"`.
+# # Figure out what the correct encoding should be and read in the file to a DataFrame `police_killings`.
 
 # CELL ********************
 
@@ -188,7 +181,5 @@ q2.solution()
 
 # MARKDOWN ********************
 
-#
-# # Keep going
-#
-# In the next lesson, learn how to [**clean up inconsistent text entries**] in your dataset.
+# # # Keep going
+# # In the next lesson, learn how to [**clean up inconsistent text entries**] in your dataset.

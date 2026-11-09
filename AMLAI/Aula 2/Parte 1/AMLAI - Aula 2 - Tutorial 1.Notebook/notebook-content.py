@@ -23,8 +23,7 @@
 # MARKDOWN ********************
 
 # # AMLAI - Aula 2 - Tutorial 1: Machine Learning Pipelines
-#
-# In this tutorial, you will learn how to use **pipelines** to clean up your modeling code.
+# # In this tutorial, you will learn how to use **pipelines** to clean up your modeling code.
 # 
 # ## Introduction
 # 

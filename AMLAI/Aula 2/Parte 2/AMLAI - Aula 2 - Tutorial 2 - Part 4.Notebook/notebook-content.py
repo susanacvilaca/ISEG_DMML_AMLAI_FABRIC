@@ -11,8 +11,7 @@
 # MARKDOWN ********************
 
 # # AMLAI - Aula 2 - Tutorial 2 - Part 4 #
-#
-# ## Score the trained model
+# # ## Score the trained model
 
 
 # MARKDOWN ********************

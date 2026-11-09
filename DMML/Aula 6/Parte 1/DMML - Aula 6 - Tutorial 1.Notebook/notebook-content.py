@@ -21,8 +21,7 @@
 # Just like flowchart, decision tree contains different types of nodes and branches. Every decision node represent the test on feature and based on the test result it will either form another branch or the leaf node. Every branch represents the decision rule and leaf node represent the final outcome.
 # 
 # ![decision tree](https://raw.githubusercontent.com/satishgunjal/images/master/Decision_Tree.png)
-#
-# Types of decision tree
+# # Types of decision tree
 # * Classification decision trees − In this kind of decision trees, the decision variable is categorical.
 # * Regression decision trees − In this kind of decision trees, the decision variable is continuous
 
@@ -55,15 +54,11 @@
 # So in case of 'Entropy', decision tree will split the data using the feature that provides the highest information gain.
 # 
 # ### Gini
-#
-# We have not look to Gini in the classes but it is also an option, here is how Gini works.
+# # We have not look to Gini in the classes but it is also an option, here is how Gini works.
 # In case of gini impurity, we pick a random data point in our dataset. Then randomly classify it according to the class distribution in the dataset. So it becomes very important to know the accuracy of this random classification. Gini impurity gives us the probability of incorrect classification. We’ll determine the quality of the split by weighting the impurity of each branch by how many elements it has. Resulting value is called as 'Gini Gain' or 'Gini Index'. This is what’s used to pick the best split in a decision tree. Higher the Gini Gain, better the split
-#
-# 'i' in below Gini formula represent the target classes
-#
-#    ![gini_formula](https://raw.githubusercontent.com/satishgunjal/images/master/gini_formula.png)
-#
-# So in case of 'gini', decision tree will split the data using the feature that provides the highest gini gain.
+# # 'i' in below Gini formula represent the target classes
+# #    ![gini_formula](https://raw.githubusercontent.com/satishgunjal/images/master/gini_formula.png)
+# # So in case of 'gini', decision tree will split the data using the feature that provides the highest gini gain.
 # 
 
 
@@ -160,8 +155,7 @@ df.sample(5)
 # MARKDOWN ********************
 
 # Note that, target value 0 = setosa, 1 = versicolor and 2 = virginica
-#
-# Let visualize the feature values for each type of flower
+# # Let visualize the feature values for each type of flower
 
 # CELL ********************
 

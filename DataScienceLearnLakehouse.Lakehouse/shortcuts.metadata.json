@@ -1,1 +1,194 @@
-[]
+[
+  {
+    "name": "Env",
+    "path": "/Files",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Files/Env",
+        "itemId": "81cbac54-cfa3-495b-ad48-b44a92bb72fb",
+        "workspaceId": "a677a3bf-5fb2-455e-abaa-9e850bde3e1a"
+      }
+    }
+  },
+  {
+    "name": "DMML_Aula8",
+    "path": "/Files",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Files/DMML_Aula8",
+        "itemId": "81cbac54-cfa3-495b-ad48-b44a92bb72fb",
+        "workspaceId": "a677a3bf-5fb2-455e-abaa-9e850bde3e1a"
+      }
+    }
+  },
+  {
+    "name": "DMML_Aula7",
+    "path": "/Files",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Files/DMML_Aula7",
+        "itemId": "81cbac54-cfa3-495b-ad48-b44a92bb72fb",
+        "workspaceId": "a677a3bf-5fb2-455e-abaa-9e850bde3e1a"
+      }
+    }
+  },
+  {
+    "name": "DMML_Aula6",
+    "path": "/Files",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Files/DMML_Aula6",
+        "itemId": "81cbac54-cfa3-495b-ad48-b44a92bb72fb",
+        "workspaceId": "a677a3bf-5fb2-455e-abaa-9e850bde3e1a"
+      }
+    }
+  },
+  {
+    "name": "DMML_Aula5",
+    "path": "/Files",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Files/DMML_Aula5",
+        "itemId": "81cbac54-cfa3-495b-ad48-b44a92bb72fb",
+        "workspaceId": "a677a3bf-5fb2-455e-abaa-9e850bde3e1a"
+      }
+    }
+  },
+  {
+    "name": "DMML_Aula4",
+    "path": "/Files",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Files/DMML_Aula4",
+        "itemId": "81cbac54-cfa3-495b-ad48-b44a92bb72fb",
+        "workspaceId": "a677a3bf-5fb2-455e-abaa-9e850bde3e1a"
+      }
+    }
+  },
+  {
+    "name": "DMML_Aula3",
+    "path": "/Files",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Files/DMML_Aula3",
+        "itemId": "81cbac54-cfa3-495b-ad48-b44a92bb72fb",
+        "workspaceId": "a677a3bf-5fb2-455e-abaa-9e850bde3e1a"
+      }
+    }
+  },
+  {
+    "name": "DMML_Aula2",
+    "path": "/Files",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Files/DMML_Aula2",
+        "itemId": "81cbac54-cfa3-495b-ad48-b44a92bb72fb",
+        "workspaceId": "a677a3bf-5fb2-455e-abaa-9e850bde3e1a"
+      }
+    }
+  },
+  {
+    "name": "DMML_Aula1",
+    "path": "/Files",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Files/DMML_Aula1",
+        "itemId": "81cbac54-cfa3-495b-ad48-b44a92bb72fb",
+        "workspaceId": "a677a3bf-5fb2-455e-abaa-9e850bde3e1a"
+      }
+    }
+  },
+  {
+    "name": "DMML_Aula0",
+    "path": "/Files",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Files/DMML_Aula0",
+        "itemId": "81cbac54-cfa3-495b-ad48-b44a92bb72fb",
+        "workspaceId": "a677a3bf-5fb2-455e-abaa-9e850bde3e1a"
+      }
+    }
+  },
+  {
+    "name": "AMLAI_Aula7",
+    "path": "/Files",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Files/AMLAI_Aula7",
+        "itemId": "81cbac54-cfa3-495b-ad48-b44a92bb72fb",
+        "workspaceId": "a677a3bf-5fb2-455e-abaa-9e850bde3e1a"
+      }
+    }
+  },
+  {
+    "name": "AMLAI_Aula6",
+    "path": "/Files",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Files/AMLAI_Aula6",
+        "itemId": "81cbac54-cfa3-495b-ad48-b44a92bb72fb",
+        "workspaceId": "a677a3bf-5fb2-455e-abaa-9e850bde3e1a"
+      }
+    }
+  },
+  {
+    "name": "AMLAI_Aula5",
+    "path": "/Files",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Files/AMLAI_Aula5",
+        "itemId": "81cbac54-cfa3-495b-ad48-b44a92bb72fb",
+        "workspaceId": "a677a3bf-5fb2-455e-abaa-9e850bde3e1a"
+      }
+    }
+  },
+  {
+    "name": "AMLAI_Aula4",
+    "path": "/Files",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Files/AMLAI_Aula4",
+        "itemId": "81cbac54-cfa3-495b-ad48-b44a92bb72fb",
+        "workspaceId": "a677a3bf-5fb2-455e-abaa-9e850bde3e1a"
+      }
+    }
+  },
+  {
+    "name": "AMLAI_Aula3",
+    "path": "/Files",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Files/AMLAI_Aula3",
+        "itemId": "81cbac54-cfa3-495b-ad48-b44a92bb72fb",
+        "workspaceId": "a677a3bf-5fb2-455e-abaa-9e850bde3e1a"
+      }
+    }
+  },
+  {
+    "name": "AMLAI_Aula1",
+    "path": "/Files",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Files/AMLAI_Aula1",
+        "itemId": "81cbac54-cfa3-495b-ad48-b44a92bb72fb",
+        "workspaceId": "a677a3bf-5fb2-455e-abaa-9e850bde3e1a"
+      }
+    }
+  }
+]

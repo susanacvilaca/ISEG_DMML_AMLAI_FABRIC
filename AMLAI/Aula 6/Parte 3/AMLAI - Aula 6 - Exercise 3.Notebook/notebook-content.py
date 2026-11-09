@@ -89,8 +89,7 @@ average_sales = (
 # MARKDOWN ********************
 
 # -------------------------------------------------------------------------------
-#
-# Examine the following seasonal plot:
+# # Examine the following seasonal plot:
 
 # CELL ********************
 
@@ -221,8 +220,7 @@ ax.legend();
 # MARKDOWN ********************
 
 # Removing from a series its trend or seasons is called **detrending** or **deseasonalizing** the series.
-#
-# Look at the periodogram of the deseasonalized series.
+# # Look at the periodogram of the deseasonalized series.
 
 # CELL ********************
 
@@ -304,8 +302,7 @@ ax.set_title('National and Regional Holidays');
 # MARKDOWN ********************
 
 # # 4) Create holiday features
-#
-# What kind of features could you create to help your model make use of this information? Code your answer in the next cell. (Scikit-learn and Pandas both have utilities that should make this easy. See the `hint` if you'd like more details.)
+# # What kind of features could you create to help your model make use of this information? Code your answer in the next cell. (Scikit-learn and Pandas both have utilities that should make this easy. See the `hint` if you'd like more details.)
 
 
 # CELL ********************

@@ -84,10 +84,10 @@ reviews.head()
 # CELL ********************
 
 # Your code here
-renamed = ____
-
+renamed = reviews.rename(columns={'region_1': 'region', 'region_2': 'locale'})
+renamed.head()
 # Check your answer
-q1.check()
+#q1.check()
 
 # METADATA ********************
 
@@ -115,7 +115,7 @@ q1.check()
 
 # CELL ********************
 
-reindexed = ____
+reindexed = reviews.rename_axis('wines', axis='rows')
 
 # Check your answer
 q2.check()
@@ -164,7 +164,7 @@ movie_products['subreddit'] = "r/movies"
 
 # CELL ********************
 
-combined_products = ____
+combined_products = pd.concat([gaming_products, movie_products])
 
 # Check your answer
 q3.check()
@@ -211,7 +211,8 @@ powerlifting_competitors = pd.read_csv("/lakehouse/default/Files/DMML_Aula0/powe
 
 # CELL ********************
 
-powerlifting_combined = ____
+
+powerlifting_combined = powerlifting_meets.set_index('MeetID').join(powerlifting_competitors.set_index('MeetID'))
 
 # Check your answer
 q4.check()
@@ -240,4 +241,4 @@ q4.check()
 # # Congratulations!
 # 
 # You've finished the Pandas micro-course.  Many data scientists feel efficiency with Pandas is the most useful and practical skill they have, because it allows you to progress quickly in any project you have.
-# 
+

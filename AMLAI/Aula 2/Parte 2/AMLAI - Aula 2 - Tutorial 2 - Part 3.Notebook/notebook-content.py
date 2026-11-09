@@ -11,8 +11,7 @@
 # MARKDOWN ********************
 
 # # AMLAI - Aula 2 - Tutorial 2 - Part 3 #
-#
-# ## Train and register a machine learning model
+# # ## Train and register a machine learning model
 # 
 # In this tutorial, you'll learn to train multiple machine learning models to select the best one in order to predict which bank customers are likely to leave.
 # 

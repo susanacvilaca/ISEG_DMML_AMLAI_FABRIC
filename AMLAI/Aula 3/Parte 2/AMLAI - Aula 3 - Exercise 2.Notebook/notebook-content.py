@@ -221,7 +221,8 @@ model = keras.Sequential([
 ])
 
 # Check your answer
-q_3.check()
+q_3.check(
+
 # METADATA ********************
 
 # META {

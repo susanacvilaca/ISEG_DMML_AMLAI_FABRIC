@@ -81,15 +81,13 @@ print("Setup Complete")
 # MARKDOWN ********************
 
 # ## Get the Data
-#
-# We'll work with the Ecommerce Customers csv file from the company. It has Customer info, suchas Email, Address, and their color Avatar. Then it also has numerical value columns:
+# # We'll work with the Ecommerce Customers csv file from the company. It has Customer info, suchas Email, Address, and their color Avatar. Then it also has numerical value columns:
 # 
 # * Avg. Session Length: Average session of in-store style advice sessions.
 # * Time on App: Average time spent on App in minutes
 # * Time on Website: Average time spent on Website in minutes
 # * Length of Membership: How many years the customer has been a member.
-#
-# ** Read in the Ecommerce Customers csv file as a DataFrame called customers.**
+# # ** Read in the Ecommerce Customers csv file as a DataFrame called customers.**
 
 # CELL ********************
 
@@ -256,8 +254,7 @@ sns.lmplot(x='Length of Membership',y='Yearly Amount Spent',data=customers)
 # MARKDOWN ********************
 
 # ## Training and Testing Data
-#
-# Now that we've explored the data a bit, let's go ahead and split the data into training and testing sets.
+# # Now that we've explored the data a bit, let's go ahead and split the data into training and testing sets.
 # ** Set a variable X equal to the numerical features of the customers and a variable y equal to the "Yearly Amount Spent" column. **
 
 # CELL ********************
@@ -311,10 +308,8 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_
 # MARKDOWN ********************
 
 # ## Step 1: Training the Model
-#
-# Now its time to train our model on our training data!
-#
-# Create an instance of a LinearRegression() model named model and fit the training data
+# # Now its time to train our model on our training data!
+# # Create an instance of a LinearRegression() model named model and fit the training data
 
 
 # CELL ********************
@@ -381,8 +376,7 @@ print('Coefficients: \n', model.coef_)
 
 # ## Predicting Test Data
 # Now that we have fit our model, let's evaluate its performance by predicting off the test values!
-#
-# We are going to use model.predict() to predict off the X_test set of the data.
+# # We are going to use model.predict() to predict off the X_test set of the data.
 
 # CELL ********************
 
@@ -415,10 +409,8 @@ plt.ylabel('Predicted Y')
 # MARKDOWN ********************
 
 # ## Step 2: Evaluating the Model
-#
-# Let's evaluate our model performance by calculating the residual sum of squares and the explained variance score (R^2).
-#
-# ** Calculate the Mean Absolute Error, Mean Squared Error, and the Root Mean Squared Error.**
+# # Let's evaluate our model performance by calculating the residual sum of squares and the explained variance score (R^2).
+# # ** Calculate the Mean Absolute Error, Mean Squared Error, and the Root Mean Squared Error.**
 
 # CELL ********************
 
@@ -471,10 +463,8 @@ step_3.solution()
 # MARKDOWN ********************
 
 # ## Residuals
-#
-# You should have gotten a very good model with a good fit. Let's quickly explore the residuals to make sure everything was okay with our data.
-#
-# Here we Plot a histogram of the residuals and make sure it looks normally distributed. Use either seaborn distplot, or just plt.hist().
+# # You should have gotten a very good model with a good fit. Let's quickly explore the residuals to make sure everything was okay with our data.
+# # Here we Plot a histogram of the residuals and make sure it looks normally distributed. Use either seaborn distplot, or just plt.hist().
 
 # CELL ********************
 
@@ -546,5 +536,4 @@ step_5.solution()
 # MARKDOWN ********************
 
 # ## Great Job!
-#
-# Congrats on your contract work! The company loved the insights! Let's move on.
+# # Congrats on your contract work! The company loved the insights! Let's move on.

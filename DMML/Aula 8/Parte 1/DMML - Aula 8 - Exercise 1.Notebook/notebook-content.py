@@ -25,50 +25,30 @@
 # 
 # 
 # Support Vector Machines (SVMs in short) are supervised machine learning algorithms that are used for classification and regression purposes (Support Vector Regression in that case). In this tutorial we will build a Support Vector Machines classifier to classify a Pulsar star. We will used the **Predicting a Pulsar Star** dataset.
-#
-# So, let's get started.
+# # So, let's get started.
 
 # MARKDOWN ********************
 
 # ## Dataset description
-#
-#
-#
-# We will use the **Predicting a Pulsar Star** dataset for this tutorial
-#
-# Pulsars are a rare type of Neutron star that produce radio emission detectable here on Earth. They are of considerable scientific interest as probes of space-time, the inter-stellar medium, and states of matter. Classification algorithms in particular are being adopted, which treat the data sets as binary classification problems. Here the legitimate pulsar examples form  minority positive class and spurious examples form the majority negative class.
-#
-# The data set shared here contains 16,259 spurious examples caused by RFI/noise, and 1,639 real pulsar examples. Each row lists the variables first, and the class label is the final entry. The class labels used are 0 (negative) and 1 (positive).
-#
-#
-# ### Attribute Information:
-#
-#
-# Each candidate is described by 8 continuous variables, and a single class variable. The first four are simple statistics obtained from the integrated pulse profile. The remaining four variables are similarly obtained from the DM-SNR curve . These are summarised below:
-#
-# 1. Mean of the integrated profile.
-#
-# 2. Standard deviation of the integrated profile.
-#
-# 3. Excess kurtosis of the integrated profile.
-#
-# 4. Skewness of the integrated profile.
-#
-# 5. Mean of the DM-SNR curve.
-#
-# 6. Standard deviation of the DM-SNR curve.
-#
-# 7. Excess kurtosis of the DM-SNR curve.
-#
-# 8. Skewness of the DM-SNR curve.
-#
-# 9. Class
+# # # # We will use the **Predicting a Pulsar Star** dataset for this tutorial
+# # Pulsars are a rare type of Neutron star that produce radio emission detectable here on Earth. They are of considerable scientific interest as probes of space-time, the inter-stellar medium, and states of matter. Classification algorithms in particular are being adopted, which treat the data sets as binary classification problems. Here the legitimate pulsar examples form  minority positive class and spurious examples form the majority negative class.
+# # The data set shared here contains 16,259 spurious examples caused by RFI/noise, and 1,639 real pulsar examples. Each row lists the variables first, and the class label is the final entry. The class labels used are 0 (negative) and 1 (positive).
+# # # ### Attribute Information:
+# # # Each candidate is described by 8 continuous variables, and a single class variable. The first four are simple statistics obtained from the integrated pulse profile. The remaining four variables are similarly obtained from the DM-SNR curve . These are summarised below:
+# # 1. Mean of the integrated profile.
+# # 2. Standard deviation of the integrated profile.
+# # 3. Excess kurtosis of the integrated profile.
+# # 4. Skewness of the integrated profile.
+# # 5. Mean of the DM-SNR curve.
+# # 6. Standard deviation of the DM-SNR curve.
+# # 7. Excess kurtosis of the DM-SNR curve.
+# # 8. Skewness of the DM-SNR curve.
+# # 9. Class
 
 # MARKDOWN ********************
 
 # ## Import libraries
-#
-# We will start off by importing the required Python libraries.
+# # We will start off by importing the required Python libraries.
 
 # CELL ********************
 
@@ -133,9 +113,7 @@ df = pd.read_csv(data)
 # MARKDOWN ********************
 
 # # Exploratory data analysis
-#
-#
-# Now, we will explore the data to gain insights about the data.
+# # # Now, we will explore the data to gain insights about the data.
 
 # CELL ********************
 
@@ -166,9 +144,7 @@ df.head()
 # MARKDOWN ********************
 
 # We can see that there are 9 variables in the dataset. 8 are continuous variables and 1 is discrete variable. The discrete variable is `target_class` variable. It is also the target variable.
-#
-#
-# Now, I will view the column names to check for leading and trailing spaces.
+# # # Now, I will view the column names to check for leading and trailing spaces.
 
 # CELL ********************
 
@@ -312,18 +288,10 @@ df.isnull().sum()
 # MARKDOWN ********************
 
 # ### Summary of numerical variables
-#
-#
-# - There are 9 numerical variables in the dataset.
-#
-#
-# - 8 are continuous variables and 1 is discrete variable.
-#
-#
-# - The discrete variable is `target_class` variable. It is also the target variable.
-#
-#
-# - There are no missing values in the dataset.
+# # # - There are 9 numerical variables in the dataset.
+# # # - 8 are continuous variables and 1 is discrete variable.
+# # # - The discrete variable is `target_class` variable. It is also the target variable.
+# # # - There are no missing values in the dataset.
 
 # MARKDOWN ********************
 
@@ -345,9 +313,7 @@ round(df.describe(),2)
 # MARKDOWN ********************
 
 # On closer inspection, we can suspect that all the continuous variables may contain outliers.
-#
-#
-# We will draw boxplots to visualise outliers in the above variables.
+# # # We will draw boxplots to visualise outliers in the above variables.
 
 # CELL ********************
 
@@ -417,26 +383,16 @@ fig.set_ylabel('DM-SNR Skewness')
 # MARKDOWN ********************
 
 # ### Handle outliers with SVMs
-#
-#
-# There are 2 variants of SVMs. They are `hard-margin variant of SVM` and `soft-margin variant of SVM`.
-#
-#
-# The `hard-margin variant of SVM` does not deal with outliers. In this case, we want to find the hyperplane with maximum margin such that every training point is correctly classified with margin at least 1. This technique does not handle outliers well.
-#
-#
-# Another version of SVM is called `soft-margin variant of SVM`. In this case, we can have a few points incorrectly classified or
+# # # There are 2 variants of SVMs. They are `hard-margin variant of SVM` and `soft-margin variant of SVM`.
+# # # The `hard-margin variant of SVM` does not deal with outliers. In this case, we want to find the hyperplane with maximum margin such that every training point is correctly classified with margin at least 1. This technique does not handle outliers well.
+# # # Another version of SVM is called `soft-margin variant of SVM`. In this case, we can have a few points incorrectly classified or
 # classified with a margin less than 1. But for every such point, we have to pay a penalty in the form of `C` parameter, which controls the outliers. `Low C` implies we are allowing more outliers and `high C` implies less outliers.
-#
-#
-# The message is that since the dataset contains outliers, so the value of C should be high while training the model.
+# # # The message is that since the dataset contains outliers, so the value of C should be high while training the model.
 
 # MARKDOWN ********************
 
 # ### Check the distribution of variables
-#
-#
-# Now, we will plot the histograms to check distributions to find out if they are normal or skewed.
+# # # Now, we will plot the histograms to check distributions to find out if they are normal or skewed.
 
 # CELL ********************
 
@@ -512,8 +468,7 @@ fig.set_ylabel('Number of pulsar stars')
 # MARKDOWN ********************
 
 # # Step 1: Split the data into training and test set
-#
-# Define X,y and from thee create X_train, X_test, y_train, y_test. Use test_size=0.2 and random_state = 0.
+# # Define X,y and from thee create X_train, X_test, y_train, y_test. Use test_size=0.2 and random_state = 0.
 # You will need to use the simpleImputer as well with mean strategy
 
 
@@ -635,9 +590,7 @@ X_train.describe()
 # MARKDOWN ********************
 
 # # Step 2:  Run SVM with default hyperparameters
-#
-#
-# Create an SVC instance with the default hyperparameter means C=1.0,  kernel=`rbf` and gamma=`auto` among other parameters and fit the training data.
+# # # Create an SVC instance with the default hyperparameter means C=1.0,  kernel=`rbf` and gamma=`auto` among other parameters and fit the training data.
 
 # CELL ********************
 
@@ -691,9 +644,7 @@ print('Model accuracy score with default hyperparameters: {0:0.4f}'. format(accu
 # MARKDOWN ********************
 
 # ## Step 3: Run SVM with rbf kernel and C=100.0
-#
-#
-# We have seen that there are outliers in our dataset. So, we should increase the value of C as higher C means fewer outliers.
+# # # We have seen that there are outliers in our dataset. So, we should increase the value of C as higher C means fewer outliers.
 # So, I will run SVM with kernel=`rbf` and C=100.0.
 
 # CELL ********************
@@ -745,8 +696,7 @@ print('Model accuracy score with rbf kernel and C=100.0 : {0:0.4f}'. format(accu
 # MARKDOWN ********************
 
 # We can see that we obtain a higher accuracy with C=100.0 as higher C means less outliers.
-#
-# Now, we will further increase the value of C=1000.0 and check accuracy.
+# # Now, we will further increase the value of C=1000.0 and check accuracy.
 
 # MARKDOWN ********************
 
@@ -784,8 +734,7 @@ print('Model accuracy score with rbf kernel and C=1000.0 : {0:0.4f}'. format(acc
 # MARKDOWN ********************
 
 # ##  Run SVM with linear kernel
-#
-# Run SVM with linear kernel and C=1.0
+# # Run SVM with linear kernel and C=1.0
 
 # CELL ********************
 
@@ -879,9 +828,7 @@ print('Model accuracy score with linear kernel and C=1000.0 : {0:0.4f}'. format(
 # MARKDOWN ********************
 
 # ### Compare the train-set and test-set accuracy
-#
-#
-# Now, I will compare the train-set and test-set accuracy to check for overfitting.
+# # # Now, I will compare the train-set and test-set accuracy to check for overfitting.
 
 # CELL ********************
 
@@ -938,11 +885,8 @@ print('Test set score: {:.4f}'.format(linear_svc.score(X_test, y_test)))
 # MARKDOWN ********************
 
 # ### Compare model accuracy with null accuracy
-#
-#
-# So, the model accuracy is 0.9832. But, we cannot say that our model is very good based on the above accuracy. We must compare it with the **null accuracy**. Null accuracy is the accuracy that could be achieved by always predicting the most frequent class.
-#
-# So, we should first check the class distribution in the test set.
+# # # So, the model accuracy is 0.9832. But, we cannot say that our model is very good based on the above accuracy. We must compare it with the **null accuracy**. Null accuracy is the accuracy that could be achieved by always predicting the most frequent class.
+# # So, we should first check the class distribution in the test set.
 
 # CELL ********************
 
@@ -983,8 +927,7 @@ print('Null accuracy score: {0:0.4f}'. format(null_accuracy))
 # MARKDOWN ********************
 
 # ## Run SVM with polynomial kernel
-#
-# Run SVM with polynomial kernel and C=1.0
+# # Run SVM with polynomial kernel and C=1.0
 
 # CELL ********************
 
@@ -1046,8 +989,7 @@ print('Model accuracy score with polynomial kernel and C=1.0 : {0:0.4f}'. format
 # MARKDOWN ********************
 
 # ##  Run SVM with sigmoid kernel
-#
-# Run SVM with sigmoid kernel and C=1.0
+# # Run SVM with sigmoid kernel and C=1.0
 
 # CELL ********************
 
@@ -1110,8 +1052,7 @@ print('Model accuracy score with sigmoid kernel and C=100.0 : {0:0.4f}'. format(
 # MARKDOWN ********************
 
 # ## Step 4: Analyze
-#
-# What comments can you make from what you saw ?
+# # What comments can you make from what you saw ?
 
 
 # CELL ********************
@@ -1129,28 +1070,17 @@ step_4.check()
 # MARKDOWN ********************
 
 # ## Evaluation Confusion matrix
-#
-# Let's look to confusion matrix. A confusion matrix will give us a clear picture of classification model performance and the types of errors produced by the model. It gives us a summary of correct and incorrect predictions broken down by each category. The summary is represented in a tabular form.
-#
-#
-# Just to recall what we have learn Four types of outcomes are possible while evaluating a classification model performance. These four outcomes are described below:-
-#
-#
-# **True Positives (TP)** – True Positives occur when we predict an observation belongs to a certain class and the observation actually belongs to that class.
-#
-#
-# **True Negatives (TN)** – True Negatives occur when we predict an observation does not belong to a certain class and the observation actually does not belong to that class.
-#
-#
-# **False Positives (FP)** – False Positives occur when we predict an observation belongs to a    certain class but the observation actually does not belong to that class. This type of error is called **Type I error.**
+# # Let's look to confusion matrix. A confusion matrix will give us a clear picture of classification model performance and the types of errors produced by the model. It gives us a summary of correct and incorrect predictions broken down by each category. The summary is represented in a tabular form.
+# # # Just to recall what we have learn Four types of outcomes are possible while evaluating a classification model performance. These four outcomes are described below:-
+# # # **True Positives (TP)** – True Positives occur when we predict an observation belongs to a certain class and the observation actually belongs to that class.
+# # # **True Negatives (TN)** – True Negatives occur when we predict an observation does not belong to a certain class and the observation actually does not belong to that class.
+# # # **False Positives (FP)** – False Positives occur when we predict an observation belongs to a    certain class but the observation actually does not belong to that class. This type of error is called **Type I error.**
 # 
 # 
 # 
 # **False Negatives (FN)** – False Negatives occur when we predict an observation does not belong to a certain class but the observation actually belongs to that class. This is a very serious error and it is called **Type II error.**
 # 
-#
-#
-# These four outcomes are summarized in a confusion matrix given below.
+# # # These four outcomes are summarized in a confusion matrix given below.
 
 
 # CELL ********************
@@ -1181,17 +1111,10 @@ print('\nFalse Negatives(FN) = ', cm[1,0])
 # MARKDOWN ********************
 
 # The confusion matrix shows `3289 + 230 = 3519 correct predictions` and `17 + 44 = 61 incorrect predictions`.
-#
-#
-# In this case, we have
-#
-#
-# - `True Positives` (Actual Positive:1 and Predict Positive:1) - 3289
-#
-#
-# - `True Negatives` (Actual Negative:0 and Predict Negative:0) - 230
-#
-# 
+# # # In this case, we have
+# # # - `True Positives` (Actual Positive:1 and Predict Positive:1) - 3289
+# # # - `True Negatives` (Actual Negative:0 and Predict Negative:0) - 230
+# # 
 # - `False Positives` (Actual Negative:0 but Predict Positive:1) - 17 `(Type I error)`
 # 
 # 
@@ -1216,11 +1139,7 @@ sns.heatmap(cm_matrix, annot=True, fmt='d', cmap='YlGnBu')
 # MARKDOWN ********************
 
 # ### Classification Report
-#
-#
-#
-#
-# We can print a classification report as follows:
+# # # # # We can print a classification report as follows:
 
 # CELL ********************
 
@@ -1292,11 +1211,7 @@ print('Classification error : {0:0.4f}'.format(classification_error))
 # MARKDOWN ********************
 
 # ### Precision
-#
-#
-#
-#
-
+# # # # 
 
 # CELL ********************
 
@@ -1339,16 +1254,9 @@ print('Recall or Sensitivity : {0:0.4f}'.format(recall))
 # MARKDOWN ********************
 
 # ## Stratified k-fold Cross Validation with shuffle split
-#
-#
-#
-# k-fold cross-validation is a very useful technique to evaluate model performance. But, it fails here because we have a imbalnced dataset. So, in the case of imbalanced dataset, we will use another technique to evaluate model performance. It is called `stratified k-fold cross-validation`.
-#
-#
-# In `stratified k-fold cross-validation`, we split the data such that the proportions between classes are the same in each fold as they are in the whole dataset.
-#
-#
-# Moreover, we will shuffle the data before splitting because shuffling yields much better result.
+# # # # k-fold cross-validation is a very useful technique to evaluate model performance. But, it fails here because we have a imbalnced dataset. So, in the case of imbalanced dataset, we will use another technique to evaluate model performance. It is called `stratified k-fold cross-validation`.
+# # # In `stratified k-fold cross-validation`, we split the data such that the proportions between classes are the same in each fold as they are in the whole dataset.
+# # # Moreover, we will shuffle the data before splitting because shuffling yields much better result.
 
 # MARKDOWN ********************
 
@@ -1456,16 +1364,13 @@ print('Average stratified cross-validation score with rbf kernel:{:.4f}'.format(
 # MARKDOWN ********************
 
 # ### Comments
-#
-#
-# We obtain higher average stratified k-fold cross-validation score of 0.9789 with linear kernel but the model accuracy is 0.9832.
+# # # We obtain higher average stratified k-fold cross-validation score of 0.9789 with linear kernel but the model accuracy is 0.9832.
 # So, stratified cross-validation technique does not help to improve the model performance.
 
 # MARKDOWN ********************
 
 # ## Step 5: Hyperparameter Optimization using GridSearch CV
-#
-# Using the grid bellow do GridSearch using scoring = 'accuracy', cv = 5 and verbose=0
+# # Using the grid bellow do GridSearch using scoring = 'accuracy', cv = 5 and verbose=0
 
 # CELL ********************
 
@@ -1572,27 +1477,16 @@ else:
 # MARKDOWN ********************
 
 # ### Comments
-#
-#
-# - Our original model test accuracy is 0.9832 while GridSearch CV score on test-set is 0.9835.
-#
-#
-# - So, GridSearch CV helps to identify the parameters that will improve the performance for this particular model.
-#
-#
-# - Here, we should not confuse `best_score_` attribute of `grid_search` with the `score` method on the test-set.
-#
-#
-# - The `score` method on the test-set gives the generalization performance of the model. Using the `score` method, we employ a model trained on the whole training set.
-#
-#
-# - The `best_score_` attribute gives the mean cross-validation accuracy, with cross-validation performed on the training set.
+# # # - Our original model test accuracy is 0.9832 while GridSearch CV score on test-set is 0.9835.
+# # # - So, GridSearch CV helps to identify the parameters that will improve the performance for this particular model.
+# # # - Here, we should not confuse `best_score_` attribute of `grid_search` with the `score` method on the test-set.
+# # # - The `score` method on the test-set gives the generalization performance of the model. Using the `score` method, we employ a model trained on the whole training set.
+# # # - The `best_score_` attribute gives the mean cross-validation accuracy, with cross-validation performed on the training set.
 
 # MARKDOWN ********************
 
 # ## Step 6: Final Results and conclusion
-#
-# What comments do you have and conclusions ?
+# # What comments do you have and conclusions ?
 
 
 # CELL ********************

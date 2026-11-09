@@ -11,8 +11,7 @@
 # MARKDOWN ********************
 
 # # AMLAI - Aula 2 - Tutorial 2 - Part 2 #
-#
-# ## Explore data
+# # ## Explore data
 # 
 # In this tutorial, you'll use `seaborn`, which is a Python data visualization library that provides a high-level interface for building visuals on dataframes and arrays. For more information about `seaborn`, see [seaborn: statistical data visualization](https://seaborn.pydata.org/).  
 # 

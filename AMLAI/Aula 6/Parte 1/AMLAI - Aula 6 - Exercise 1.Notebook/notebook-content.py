@@ -86,10 +86,8 @@ average_sales = store_sales.groupby('date').mean()['sales']
 # MARKDOWN ********************
 
 # --------------------------------------------------------------------------------
-#
-# One advantage linear regression has over more complicated algorithms is that the models it creates are *explainable* -- it's easy to interpret what contribution each feature makes to the predictions. In the model `target = weight * feature + bias`, the `weight` tells you by how much the `target` changes on average for each unit of change in the `feature`.
-#
-# Run the next cell to see a linear regression on *Hardcover Sales*.
+# # One advantage linear regression has over more complicated algorithms is that the models it creates are *explainable* -- it's easy to interpret what contribution each feature makes to the predictions. In the model `target = weight * feature + bias`, the `weight` tells you by how much the `target` changes on average for each unit of change in the `feature`.
+# # Run the next cell to see a linear regression on *Hardcover Sales*.
 
 # CELL ********************
 
@@ -108,8 +106,7 @@ ax.set_title('Time Plot of Hardcover Sales');
 # MARKDOWN ********************
 
 # # 1) Interpret linear regression with the time dummy
-#
-# The linear regression line has an equation of (approximately) `Hardcover = 3.33 * Time + 150.5`. Over 6 days how much on average would you expect hardcover sales to change? After you've thought about it, run the next cell.
+# # The linear regression line has an equation of (approximately) `Hardcover = 3.33 * Time + 150.5`. Over 6 days how much on average would you expect hardcover sales to change? After you've thought about it, run the next cell.
 
 # CELL ********************
 
@@ -265,10 +262,8 @@ ax.set_title('Time Plot of Total Store Sales');
 # MARKDOWN ********************
 
 # -------------------------------------------------------------------------------
-#
-# # 4) Fit a lag feature to Store Sales
-#
-# Complete the code below to create a linear regression model with a lag feature on the series of average product sales. The target is in a column of `df` called `'sales'`.
+# # # 4) Fit a lag feature to Store Sales
+# # Complete the code below to create a linear regression model with a lag feature on the series of average product sales. The target is in a column of `df` called `'sales'`.
 
 # CELL ********************
 

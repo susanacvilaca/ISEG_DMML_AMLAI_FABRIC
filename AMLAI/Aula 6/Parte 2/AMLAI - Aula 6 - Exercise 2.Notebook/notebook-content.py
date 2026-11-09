@@ -143,8 +143,7 @@ q_1.solution()
 # MARKDOWN ********************
 
 # -------------------------------------------------------------------------------
-#
-# # 2) Identify trend
+# # # 2) Identify trend
 # 
 # What order polynomial trend might be appropriate for the *Food and Beverage Sales* series? Can you think of a non-polynomial curve that might work even better?
 # 
@@ -165,8 +164,7 @@ q_2.check()
 # MARKDOWN ********************
 
 # -------------------------------------------------------------------------------
-#
-# We'll continue using the time series of average sales in this lesson. Run this cell to see a moving average plot of `average_sales` estimating the trend.
+# # We'll continue using the time series of average sales in this lesson. Run this cell to see a moving average plot of `average_sales` estimating the trend.
 
 # CELL ********************
 
@@ -189,8 +187,7 @@ ax = trend.plot(ax=ax, linewidth=3)
 # MARKDOWN ********************
 
 # # 3) Create a Trend Feature
-#
-# Use `DeterministicProcess` to create a feature set for a cubic trend model. Also create features for a 90-day forecast.
+# # Use `DeterministicProcess` to create a feature set for a cubic trend model. Also create features for a 90-day forecast.
 
 # CELL ********************
 
@@ -288,8 +285,7 @@ ax.legend();
 # MARKDOWN ********************
 
 # # 4) Understand risks of forecasting with high-order polynomials
-#
-# High-order polynomials are generally not well-suited to forecasting, however. Can you guess why?
+# # High-order polynomials are generally not well-suited to forecasting, however. Can you guess why?
 
 # CELL ********************
 

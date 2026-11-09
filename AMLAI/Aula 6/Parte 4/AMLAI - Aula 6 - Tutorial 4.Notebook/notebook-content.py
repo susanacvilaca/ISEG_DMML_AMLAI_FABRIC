@@ -107,20 +107,15 @@ df.head()
 # A plot like that above is known as a *correlogram*. The correlogram is for lag features essentially what the periodogram is for Fourier features.
 # 
 # Finally, we need to be mindful that autocorrelation and partial autocorrelation are measures of *linear* dependence. Because real-world time series often have substantial non-linear dependences, it's best to look at a lag plot (or use some more general measure of dependence, like [mutual information](https://www.kaggle.com/ryanholbrook/mutual-information)) when choosing lag features. The *Sunspots* series has lags with non-linear dependence which we might overlook with autocorrelation.
-#
-# <figure style="padding: 1em;">
+# # <figure style="padding: 1em;">
 # <img src="https://storage.googleapis.com/kaggle-media/learn/images/Q38UVOu.png" width=350, alt="">
 #     <figcaption style="textalign: center; font-style: italic"><center>Lag plot of the <em>Sunspots</em> series.
 # </center></figcaption>
 # </figure>
-#
-# Non-linear relationships like these can either be transformed to be linear or else learned by an appropriate algorithm.
-#
-# # Example - Flu Trends #
-#
-# The *Flu Trends* dataset contains records of doctor's visits for the flu for weeks between 2009 and 2016. Our goal is to forecast the number of flu cases for the coming weeks.
-#
-# We will take two approaches. In the first we'll forecast doctor's visits using lag features. Our second approach will be to forecast doctor's visits using lags of *another* set of time series: flu-related search terms as captured by Google Trends.
+# # Non-linear relationships like these can either be transformed to be linear or else learned by an appropriate algorithm.
+# # # Example - Flu Trends #
+# # The *Flu Trends* dataset contains records of doctor's visits for the flu for weeks between 2009 and 2016. Our goal is to forecast the number of flu cases for the coming weeks.
+# # We will take two approaches. In the first we'll forecast doctor's visits using lag features. Our second approach will be to forecast doctor's visits using lags of *another* set of time series: flu-related search terms as captured by Google Trends.
 
 # CELL ********************
 
@@ -402,8 +397,7 @@ _ = y_fore.plot(ax=ax, color='C3')
 # MARKDOWN ********************
 
 # ---
-#
-# The time series illustrated in this lesson are what you might call "purely cyclic": they have no obvious trend or seasonality. It's not uncommon though for time series to possess trend, seasonality, and cycles -- all three components at once. You could model such series with linear regression by just adding the appropriate features for each component. You can even combine models trained to learn the components separately, which we'll learn how to do in the next lesson with *forecasting hybrids*.
+# # The time series illustrated in this lesson are what you might call "purely cyclic": they have no obvious trend or seasonality. It's not uncommon though for time series to possess trend, seasonality, and cycles -- all three components at once. You could model such series with linear regression by just adding the appropriate features for each component. You can even combine models trained to learn the components separately, which we'll learn how to do in the next lesson with *forecasting hybrids*.
 
 # MARKDOWN ********************
 

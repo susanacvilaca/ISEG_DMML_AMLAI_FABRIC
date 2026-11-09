@@ -18,22 +18,16 @@
 # MARKDOWN ********************
 
 # # Introduction
-#
-# In this tutorial we will be discussing sequence models and specifically talk about Recurrent Neural Networks.
-#
-#
-# ![RNN.gif](attachment:4692c423-aa44-4a4e-83c0-77d12414c333.gif)
-#
-# First, we look at our very short model. Later, we'll talk about what RNN is. We will look at how RNN works and we will support this with visuals. We will look at where RNN is used. In short, we will try to understand the things  without going into the mathematics of the work.
+# # In this tutorial we will be discussing sequence models and specifically talk about Recurrent Neural Networks.
+# # # ![RNN.gif](attachment:4692c423-aa44-4a4e-83c0-77d12414c333.gif)
+# # First, we look at our very short model. Later, we'll talk about what RNN is. We will look at how RNN works and we will support this with visuals. We will look at where RNN is used. In short, we will try to understand the things  without going into the mathematics of the work.
 # So, let's get started by looking to Sequence models and their defenition.
-#
-# ## Sequence Models
+# # ## Sequence Models
 # * Sequence models are used for time dependent data.
 # * Speech recognition, natural language process (NLP), music generation
 # * Apples Siri and Google's voice search
 # * Sentiment classification, for example: "This is the most interesting Neural Network type"
-#
-#
+# 
 
 # ATTACHMENTS ********************
 
@@ -46,35 +40,23 @@
 # MARKDOWN ********************
 
 # # Recurrent Neural Network (RNN)
-#
-# Let's now look to RNN definition.
-#
-# RNN is a type of Deep Learning structure that is often used to predict the next step. So what is the biggest difference from other learning structures? The biggest difference from other deep learning structures is that they remember. Yes, RNNs can remember.
-#
-# RNN’s are able to remember important things about the input they received, which enables them to be very precise in predicting what’s coming next.
+# # Let's now look to RNN definition.
+# # RNN is a type of Deep Learning structure that is often used to predict the next step. So what is the biggest difference from other learning structures? The biggest difference from other deep learning structures is that they remember. Yes, RNNs can remember.
+# # RNN’s are able to remember important things about the input they received, which enables them to be very precise in predicting what’s coming next.
 # This is the reason why they are the preferred algorithm for sequential data like time series, speech, text, financial data, audio, video, weather and much more because they can form a much deeper understanding of a sequence and its context, compared to other algorithms.
 
 
 # MARKDOWN ********************
 
-#
-#
-#  Another difference is that in other neural networks, each input is independent from each other, while in RNNs the inputs are related to each other. How so ? RNN establishes relationships between inputs in order to follow the next step. It realizes education based on these relationships.
-#
-# We said RNN will remember. so how does that happen?
-#
-#  RNNs use a loop-like structure that rotates within themselves so that the relationships they have established are permanent. To understand this, let's look at the visual of the RNN structure.
-#
-# ![RNNFirst.png](attachment:c19d8a3a-b019-4e7f-b607-d7df3510ff92.png)
-#
-# Let's examine the picture above, there are actually nodes in the hidden layer here. We can see this from the previous picture.
+# # #  Another difference is that in other neural networks, each input is independent from each other, while in RNNs the inputs are related to each other. How so ? RNN establishes relationships between inputs in order to follow the next step. It realizes education based on these relationships.
+# # We said RNN will remember. so how does that happen?
+# #  RNNs use a loop-like structure that rotates within themselves so that the relationships they have established are permanent. To understand this, let's look at the visual of the RNN structure.
+# # ![RNNFirst.png](attachment:c19d8a3a-b019-4e7f-b607-d7df3510ff92.png)
+# # Let's examine the picture above, there are actually nodes in the hidden layer here. We can see this from the previous picture.
 #  these nodes have temporal cycles that feed them. Thanks to this loop, even if an output is given, the input value is not forgotten and is kept in their memory. (Short memory)
-#
-# To understand this better, let's open this picture a little more.
-#
-# ![RNNEX.png](attachment:7d78dcb1-9760-4aea-aa24-68e8f6755f88.png)
-#
-# As we understand from the picture. For example, y0 obtained in the previous step and x1, our current input, are used to output y1.
+# # To understand this better, let's open this picture a little more.
+# # ![RNNEX.png](attachment:7d78dcb1-9760-4aea-aa24-68e8f6755f88.png)
+# # As we understand from the picture. For example, y0 obtained in the previous step and x1, our current input, are used to output y1.
 
 
 # ATTACHMENTS ********************
@@ -91,16 +73,12 @@
 # MARKDOWN ********************
 
 # # Why Recurrent Neural Networks ?
-#
-# If we look to feedforward network we see this problems:
-#
-# - Cannot handle sequential data>
+# # If we look to feedforward network we see this problems:
+# # - Cannot handle sequential data>
 # - Takes into account the current entry.
 # - It does not consider previous entries, so it does not remember
-#
-#  The solution to these problems is RNN. RNN can process sequential data, accept existing input data and previously received inputs. RNNs can remember previous entries as they have internal memories. And this has multiple applications like:
-#
-# - Image Captioning
+# #  The solution to these problems is RNN. RNN can process sequential data, accept existing input data and previously received inputs. RNNs can remember previous entries as they have internal memories. And this has multiple applications like:
+# # - Image Captioning
 # - Time Series Prediction
 # - Natural Language Processing
 # - Machine Translation
@@ -109,10 +87,8 @@
 # MARKDOWN ********************
 
 # # RNN Types
-#
-# Let's now look to the different types of RNN:
-#
-# - One to One
+# # Let's now look to the different types of RNN:
+# # - One to One
 # - One to Many
 # - Many to One
 # - Many to Many
@@ -122,8 +98,7 @@
 
 # ###  One to One
 # ![RNNEX.png](attachment:b3836f81-4faa-4c65-b922-8f88da75da70.png)
-#
-# This type of neural network can be called the vanilla neural network. It has a single entrance and a single exit. It is often used for machine learning problems.
+# # This type of neural network can be called the vanilla neural network. It has a single entrance and a single exit. It is often used for machine learning problems.
 
 # ATTACHMENTS ********************
 
@@ -136,12 +111,9 @@
 # MARKDOWN ********************
 
 # ###  One to Many
-#
-# ![OnetoMany.png](attachment:78913137-2b2c-48de-a6c8-248348238b10.png)
-#
-# This neural network has one input and multiple outputs.
-#
-# Example : An example is the picture and the sentence that describes it. A picture is input as input and a sentence describing it comes out.
+# # ![OnetoMany.png](attachment:78913137-2b2c-48de-a6c8-248348238b10.png)
+# # This neural network has one input and multiple outputs.
+# # Example : An example is the picture and the sentence that describes it. A picture is input as input and a sentence describing it comes out.
 
 
 # ATTACHMENTS ********************
@@ -155,12 +127,9 @@
 # MARKDOWN ********************
 
 # ### Many to One
-#
-# ![manytoone.png](attachment:ea318661-d352-4401-a8ba-ecdf2dd6ca1b.png)
-#
-# This RNN takes multiple inputs and yields a single output.
-#
-# Example : Suppose it takes a sentence as input. It can also give the emotion of this sentence as output. as in the picture above.
+# # ![manytoone.png](attachment:ea318661-d352-4401-a8ba-ecdf2dd6ca1b.png)
+# # This RNN takes multiple inputs and yields a single output.
+# # Example : Suppose it takes a sentence as input. It can also give the emotion of this sentence as output. as in the picture above.
 
 # ATTACHMENTS ********************
 
@@ -174,10 +143,8 @@
 
 # ### Many to Many
 # ![manytomany.png](attachment:84edcfa2-e8d1-443b-b996-9694f8f2d7d8.png)
-#
-# It is a type of RNN that gives many inputs and many outputs.
-#
-# Example : An example is machine translation from one language to another.
+# # It is a type of RNN that gives many inputs and many outputs.
+# # Example : An example is machine translation from one language to another.
 
 # ATTACHMENTS ********************
 
@@ -190,8 +157,7 @@
 # MARKDOWN ********************
 
 # # RNN Implementation - Pratical use case
-#
-# We will be working with tsla stock price
+# # We will be working with tsla stock price
 
 # MARKDOWN ********************
 
@@ -261,8 +227,7 @@ print("Do you have a null column? \n", data.isna().sum())
 # MARKDOWN ********************
 
 # ## Data Preprocessing
-#
-# In this section, we will make the data available for RNN.
+# # In this section, we will make the data available for RNN.
 # - Split the data as train and test
 # - Normalize data.
 # - X_train - y_train
@@ -304,12 +269,9 @@ print("Test length --> ", len(test))
 # MARKDOWN ********************
 
 # ### Normalize data
-#
-# In this section, we will normalize the data we have.
-#
-# Why do we normalize data?
-#
-# - Normalization is very important in all deep learning in general.
+# # In this section, we will normalize the data we have.
+# # Why do we normalize data?
+# # - Normalization is very important in all deep learning in general.
 # - Normalization makes the properties more consistent. This allows the model to predict its output more accurately.
 # - In this notebook, since we use the "open" feature from our data to train the model, it will be sufficient to normalize it.
 
@@ -333,17 +295,11 @@ train_scaled = scaler.fit_transform(train)
 # MARKDOWN ********************
 
 # ### X_train - y_train
-#
-# We will separate the normalized data into x_train and y_train.
-#
-# We will make this distinction 40 steps 40 steps. So we will train in 40 steps. We will anticipate step 41.didn't we understand Let's examine the picture below and visualize this in our minds.
-#
-# What is the steps logic?
-#
-#
-# ![Steps.png](attachment:f039f066-9cc8-4f01-98ad-8b672763020e.png)
-#
-# - Let's think of the number of steps as 3, not 40.
+# # We will separate the normalized data into x_train and y_train.
+# # We will make this distinction 40 steps 40 steps. So we will train in 40 steps. We will anticipate step 41.didn't we understand Let's examine the picture below and visualize this in our minds.
+# # What is the steps logic?
+# # # ![Steps.png](attachment:f039f066-9cc8-4f01-98ad-8b672763020e.png)
+# # - Let's think of the number of steps as 3, not 40.
 # - Then we reserve the first 3 numbers for training data since our step count is 3.
 # - We try to guess the number that comes after these 3 numbers. so we separate it as y_train.
 # - And take this one step further, as you can see in the picture, we continue to do this. You can think of it exactly like this in our real data.
@@ -378,10 +334,8 @@ X_train, y_train = np.array(X_train), np.array(y_train)
 # MARKDOWN ********************
 
 # ### Reshape
-#
-# Why do we reshape ?  </p>
-#
-# One of the most basic points to be considered in RNNs is that they want their input to have 3 dimensions. These 3 sizes are typically:</p> <ul>
+# # Why do we reshape ?  </p>
+# # One of the most basic points to be considered in RNNs is that they want their input to have 3 dimensions. These 3 sizes are typically:</p> <ul>
 # - the size of data we have
 # - Number of steps
 # - Number of features
@@ -403,10 +357,8 @@ print("y_train shape --> ", y_train.shape)
 # MARKDOWN ********************
 
 # ## Implementing with Keras
-#
-# In this section, we create and fit  RNN model. </p>
-#
-# - Create Model</li>
+# # In this section, we create and fit  RNN model. </p>
+# # - Create Model</li>
 # - Compile Model</li>
 # - Epochs and Batch Size</li>
 # - Fit the model</li>
@@ -415,8 +367,7 @@ print("y_train shape --> ", y_train.shape)
 # MARKDOWN ********************
 
 # ## Create Model
-#
-# We are importing the libraries we will use for our model.
+# # We are importing the libraries we will use for our model.
 # Later, we will create our RNN model.
 
 # CELL ********************
@@ -435,8 +386,7 @@ from keras.layers import Dropout
 
 # MARKDOWN ********************
 
-#
-# - units --> Positive integer, dimensionality of the output space
+# # - units --> Positive integer, dimensionality of the output space
 # - activation --> Activation function to use. Default: hyperbolic tangent (tanh). If you pass None, no activation is applied (ie. "linear" activation: a(x) = x).
 # - return_sequences --> Boolean. Whether to return the last output in the output sequence, or the full sequence. Default: False.
 # - inputs --> A 3D tensor, with shape [batch, timesteps, feature].
@@ -470,10 +420,8 @@ regressor.add(Dense(units = 1))
 # MARKDOWN ********************
 
 # ### Compile Model
-#
-# - optimizer --> The optimizer does the process of updating our parameters for us here. some kind of healer I can say. There are methods used for multiple optimizers, and you should choose the most suitable one for the model.
-#
-# - loss --> It is a number that indicates how good or bad the model is to its prediction. As it approaches 0, the error starts to decrease.
+# # - optimizer --> The optimizer does the process of updating our parameters for us here. some kind of healer I can say. There are methods used for multiple optimizers, and you should choose the most suitable one for the model.
+# # - loss --> It is a number that indicates how good or bad the model is to its prediction. As it approaches 0, the error starts to decrease.
 
 # CELL ********************
 
@@ -501,8 +449,7 @@ batch_size = 20
 # MARKDOWN ********************
 
 # ### Fit the model
-#
-# We train the model we created above using our data.
+# # We train the model we created above using our data.
 
 # CELL ********************
 
@@ -518,8 +465,7 @@ regressor.fit(X_train, y_train, epochs = epochs, batch_size = batch_size)
 # MARKDOWN ********************
 
 # ## Predictions
-#
-# We will make predictions using the model we have created.
+# # We will make predictions using the model we have created.
 
 # CELL ********************
 
@@ -635,8 +581,6 @@ plt.show()
 # MARKDOWN ********************
 
 # # Conclusions
-#
-# Our model has made good predictions until a certain time, but after a while the difference with the real data has started to increase.
+# # Our model has made good predictions until a certain time, but after a while the difference with the real data has started to increase.
 # Well, if we used LSTM instead of RNN, how would the result change? We will discuss this next.
-#
-# ### Keep going
+# # ### Keep going

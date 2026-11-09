@@ -11,28 +11,21 @@
 # MARKDOWN ********************
 
 # # AMLAI - Aula 1 - Tutorial 2: Regularized Matrix Factorization
-#
-# Tutorial 1 represented the rating matrix with **users as rows** and **items
+# # Tutorial 1 represented the rating matrix with **users as rows** and **items
 # as columns**. Neighbourhood methods compare those rows or columns directly.
 # Matrix factorization instead learns a short latent vector for every known
 # user and item.
-#
-# For \(m\) users, \(n\) items, and \(f\) latent factors:
-#
-# - \(P \in \mathbb{R}^{m \times f}\) contains user factors;
+# # For \(m\) users, \(n\) items, and \(f\) latent factors:
+# # - \(P \in \mathbb{R}^{m \times f}\) contains user factors;
 # - \(Q \in \mathbb{R}^{n \times f}\) contains item factors;
 # - only observed ratings are used for training.
-#
-# The biased prediction is
-#
-# $$
+# # The biased prediction is
+# # $$
 # \hat r_{ui} = \mu + b_u + b_i + p_u^\top q_i,
 # $$
-#
-# where \(\mu\) is the training-set mean and \(b_u\), \(b_i\) are user and item
+# # where \(\mu\) is the training-set mean and \(b_u\), \(b_i\) are user and item
 # biases.
-#
-# Matrix factorization can model sparse observed data compactly and avoids
+# # Matrix factorization can model sparse observed data compactly and avoids
 # storing a full user-user or item-item similarity matrix. It **does not solve
 # true cold start by itself**: a user or item with no interactions has no
 # learned factors. Side information, popularity fallbacks, or an onboarding
@@ -41,11 +34,9 @@
 # MARKDOWN ********************
 
 # ## 1. Objective and Regularization
-#
-# We minimize squared error on the set \(\Omega_{\text{train}}\) of observed
+# # We minimize squared error on the set \(\Omega_{\text{train}}\) of observed
 # training ratings, plus an \(L_2\) penalty:
-#
-# $$
+# # $$
 # \mathcal{L} =
 # \sum_{(u,i)\in\Omega_{\text{train}}}
 # \left(r_{ui}-\mu-b_u-b_i-p_u^\top q_i\right)^2
@@ -53,8 +44,7 @@
 # b_u^2+b_i^2+\lVert p_u\rVert_2^2+\lVert q_i\rVert_2^2
 # \right).
 # $$
-#
-# Regularization discourages extreme parameters that merely memorize a small
+# # Regularization discourages extreme parameters that merely memorize a small
 # dataset. The example below uses deterministic stochastic gradient descent
 # (SGD), a fixed random seed, and a validation split containing only ratings
 # hidden from training.
@@ -106,8 +96,7 @@ print(ratings_df)
 # MARKDOWN ********************
 
 # ## 2. Reproducible Train/Validation Split
-#
-# The splitter considers observed ratings only. It hides ratings one by one
+# # The splitter considers observed ratings only. It hides ratings one by one
 # while ensuring that every user and every item retains at least one training
 # observation. On extremely sparse data, fewer validation rows than requested
 # may be possible; the function reports that case explicitly.
@@ -208,12 +197,10 @@ print(validation_df.to_string(index=False))
 # MARKDOWN ********************
 
 # ## 3. NumPy Implementation with Regularized SGD
-#
-# Each epoch visits every observed training rating in a seeded random order.
+# # Each epoch visits every observed training rating in a seeded random order.
 # The user bias, item bias, user factors, and item factors are updated in the
 # direction that reduces regularized prediction error.
-#
-# The implementation validates sparse and degenerate inputs instead of
+# # The implementation validates sparse and degenerate inputs instead of
 # silently fitting users or items with no training evidence.
 
 # CELL ********************
@@ -390,8 +377,7 @@ def rating_mae(actual, predicted):
 # MARKDOWN ********************
 
 # ## 4. Train and Evaluate on Held-Out Ratings
-#
-# The validation ratings remain `NaN` in `train_df`; they never contribute to
+# # The validation ratings remain `NaN` in `train_df`; they never contribute to
 # SGD updates or the training mean. RMSE penalizes larger errors more strongly,
 # while MAE reports the average absolute miss in rating units.
 
@@ -444,8 +430,7 @@ print(
 # MARKDOWN ********************
 
 # ## 5. Refit on All Observations and Recommend Unseen Items
-#
-# After model choices have been evaluated, refit the same configuration on all
+# # After model choices have been evaluated, refit the same configuration on all
 # observed ratings. Recommendation candidates are the user's genuinely unseen
 # items in the original matrix. Already-rated items are excluded before ranking.
 
@@ -516,16 +501,14 @@ print(recommendations.round(3).to_string(index=False))
 # MARKDOWN ********************
 
 # ## Summary and Limitations
-#
-# - The model optimizes a stated objective on observed training ratings only.
+# # - The model optimizes a stated objective on observed training ratings only.
 # - A seeded split and seeded SGD make this small example reproducible.
 # - \(L_2\) regularization controls the biases and latent factors.
 # - RMSE and MAE are calculated on ratings hidden before training.
 # - Recommendations rank only items unseen by the target user.
 # - Empty users/items, unknown labels, and no-unseen-item cases produce explicit
 #   errors or messages.
-#
-# This small explicit-feedback example is designed for concepts, not production
+# # This small explicit-feedback example is designed for concepts, not production
 # scale. Real systems also tune hyperparameters, compare against simple
 # baselines, evaluate ranking and business metrics, monitor drift, and combine
 # interaction data with side information for cold-start handling.

@@ -22,8 +22,7 @@
 # MARKDOWN ********************
 
 # # AMLAI - Aula 2 - Exercise 1: Machine Learning Pipelines
-#
-# In this exercise, you will use **pipelines** to improve the efficiency of your machine learning code.
+# # In this exercise, you will use **pipelines** to improve the efficiency of your machine learning code.
 # 
 # ## Setup
 # 

@@ -27,10 +27,8 @@
 # MARKDOWN ********************
 
 # # Introduction #
-#
-# In this exercise, you'll add dropout to the *Spotify* model from previous exercise and see how batch normalization can let you successfully train models on difficult datasets.
-#
-# Run the next cell to get started!
+# # In this exercise, you'll add dropout to the *Spotify* model from previous exercise and see how batch normalization can let you successfully train models on difficult datasets.
+# # Run the next cell to get started!
 
 # CELL ********************
 
@@ -141,8 +139,7 @@ print("Input shape: {}".format(input_shape))
 # MARKDOWN ********************
 
 # # 1) Add Dropout to Spotify Model
-#
-# Here is the last model from Exercise 4. Add two dropout layers, one after the `Dense` layer with 128 units, and one after the `Dense` layer with 64 units. Set the dropout rate on both to `0.3`.
+# # Here is the last model from Exercise 4. Add two dropout layers, one after the `Dense` layer with 128 units, and one after the `Dense` layer with 64 units. Set the dropout rate on both to `0.3`.
 
 # CELL ********************
 
@@ -207,8 +204,7 @@ print("Minimum Validation Loss: {:0.4f}".format(history_df['val_loss'].min()))
 # MARKDOWN ********************
 
 # # 2) Evaluate Dropout
-#
-# Recall from Exercise 4 that this model tended to overfit the data around epoch 5. Did adding dropout seem to help prevent overfitting this time?
+# # Recall from Exercise 4 that this model tended to overfit the data around epoch 5. Did adding dropout seem to help prevent overfitting this time?
 
 # CELL ********************
 
@@ -225,8 +221,7 @@ q_2.check()
 # MARKDOWN ********************
 
 # Now, we'll switch topics to explore how batch normalization can fix problems in training.
-#
-# Load the *Concrete* dataset. We won't do any standardization this time. This will make the effect of batch normalization much more apparent.
+# # Load the *Concrete* dataset. We won't do any standardization this time. This will make the effect of batch normalization much more apparent.
 
 # CELL ********************
 
@@ -291,12 +286,9 @@ print(("Minimum Validation Loss: {:0.4f}").format(history_df['val_loss'].min()))
 # MARKDOWN ********************
 
 # Did you end up with a blank graph? Trying to train this network on this dataset will usually fail. Even when it does converge (due to a lucky weight initialization), it tends to converge to a very large number.
-#
-# # 3) Add Batch Normalization Layers
-#
-# Batch normalization can help correct problems like this.
-#
-# Add four `BatchNormalization` layers, one before each of the dense layers. (Remember to move the `input_shape` argument to the new first layer.)
+# # # 3) Add Batch Normalization Layers
+# # Batch normalization can help correct problems like this.
+# # Add four `BatchNormalization` layers, one before each of the dense layers. (Remember to move the `input_shape` argument to the new first layer.)
 
 # CELL ********************
 
@@ -365,8 +357,7 @@ print(("Minimum Validation Loss: {:0.4f}").format(history_df['val_loss'].min()))
 # MARKDOWN ********************
 
 # # 4) Evaluate Batch Normalization
-#
-# Did adding batch normalization help?
+# # Did adding batch normalization help?
 
 # CELL ********************
 
@@ -383,5 +374,4 @@ q_4.check()
 # MARKDOWN ********************
 
 # # Keep Going #
-#
-# [**Create neural networks**] for binary classification in the last tutorial lesson.
+# # [**Create neural networks**] for binary classification in the last tutorial lesson.

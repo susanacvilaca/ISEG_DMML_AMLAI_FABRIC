@@ -18,8 +18,7 @@
 # MARKDOWN ********************
 
 # # Long Short Term Memory (LSTMs) - Exercise
-#
-# In the last tutorial we have explored a lot around the theory of LSTM and how you could apply LSTM for text generation, now we will work with international airline passenger data.
+# # In the last tutorial we have explored a lot around the theory of LSTM and how you could apply LSTM for text generation, now we will work with international airline passenger data.
 
 
 # MARKDOWN ********************
@@ -189,8 +188,7 @@ testY = numpy.array(dataY)
 # MARKDOWN ********************
 
 # # Step 1: reshape the Data
-#
-# Reshape the data trainX and testX so that we have X shape[0], 1, X shape[1]
+# # Reshape the data trainX and testX so that we have X shape[0], 1, X shape[1]
 
 # CELL ********************
 
@@ -222,8 +220,7 @@ step_1.solution()
 # MARKDOWN ********************
 
 # ## Step 2: Create LSTM Model
-#
-# Create an LSTM Neural Network with this layers:
+# # Create an LSTM Neural Network with this layers:
 # - sequential
 # - LSTM with 10 units
 # - Dense layer with 1 output

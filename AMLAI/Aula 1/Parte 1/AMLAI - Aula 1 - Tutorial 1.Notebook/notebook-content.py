@@ -11,49 +11,39 @@
 # MARKDOWN ********************
 
 # # AMLAI - Aula 1 - Tutorial 1: Neighbourhood-Based Recommendation Systems
-#
-# Recommendation systems rank items that may be useful to a user. In this
+# # Recommendation systems rank items that may be useful to a user. In this
 # tutorial we use explicit movie ratings and two collaborative-filtering
 # approaches:
-#
-# 1. **Item-based filtering**: recommend items that resemble items the user
+# # 1. **Item-based filtering**: recommend items that resemble items the user
 #    has rated.
 # 2. **User-based filtering**: recommend items liked by users with similar
 #    rating patterns.
-#
-# Throughout Aula 1 we use one convention consistently:
-#
-# - **rows are users**;
+# # Throughout Aula 1 we use one convention consistently:
+# # - **rows are users**;
 # - **columns are items**;
 # - a numeric value is an observed rating;
 # - `NaN` means "not rated".
-#
-# A missing rating is unknown, not a zero-star opinion. It must therefore be
+# # A missing rating is unknown, not a zero-star opinion. It must therefore be
 # excluded from means, similarities, training losses, and evaluation metrics.
 
 # MARKDOWN ********************
 
 # ## 1. Similarity with Missing Ratings
-#
-# Similarity must be calculated only where evidence exists.
-#
-# For item-based filtering we use **adjusted cosine similarity**. First, each
+# # Similarity must be calculated only where evidence exists.
+# # For item-based filtering we use **adjusted cosine similarity**. First, each
 # observed rating is centred by that user's mean rating. For items \(i\) and
 # \(j\), let \(U_{ij}\) be the users who rated both:
-#
-# $$
+# # $$
 # s(i,j)=
 # \frac{\sum_{u \in U_{ij}}(r_{ui}-\bar r_u)(r_{uj}-\bar r_u)}
 # {\sqrt{\sum_{u \in U_{ij}}(r_{ui}-\bar r_u)^2}
 #  \sqrt{\sum_{u \in U_{ij}}(r_{uj}-\bar r_u)^2}}.
 # $$
-#
-# This avoids treating missing values as ratings and reduces the effect of
+# # This avoids treating missing values as ratings and reduces the effect of
 # users who systematically rate high or low. A pair with too little overlap
 # or zero variance receives similarity `0.0`: there is not enough useful
 # evidence to use that pair as a neighbour.
-#
-# For user-based filtering we use **Pearson correlation** on co-rated items
+# # For user-based filtering we use **Pearson correlation** on co-rated items
 # only. We later keep positive neighbours: a negative correlation describes
 # opposing preferences and is deliberately not used by this introductory
 # predictor.
@@ -190,22 +180,18 @@ print(item_overlap_df)
 # MARKDOWN ********************
 
 # ## 2. Item-Based Rating Prediction
-#
-# For an unseen item \(i\), use items \(j\) already rated by user \(u\):
-#
-# $$
+# # For an unseen item \(i\), use items \(j\) already rated by user \(u\):
+# # $$
 # \hat r_{ui}=\bar r_u+
 # \frac{\sum_{j \in N_u(i)}s(i,j)(r_{uj}-\bar r_u)}
 # {\sum_{j \in N_u(i)}|s(i,j)|}.
 # $$
-#
-# The rating deviation is weighted by similarity and the result is normalized.
+# # The rating deviation is weighted by similarity and the result is normalized.
 # This is different from merely adding similarity values. Here we retain only
 # positive similarities so that each neighbour supplies useful evidence.
 # A candidate with a zero denominator is not silently assigned a fabricated
 # score; it is omitted.
-#
-# Candidate items are filtered to unseen items **before** ranking. The returned
+# # Candidate items are filtered to unseen items **before** ranking. The returned
 # table therefore contains exactly `min(k, number of valid unseen candidates)`
 # rows.
 
@@ -288,18 +274,15 @@ print(item_recommendations.to_string(index=False))
 # MARKDOWN ********************
 
 # ## 3. User-Based Collaborative Filtering
-#
-# User similarity is calculated on items rated by both users. For target user
+# # User similarity is calculated on items rated by both users. For target user
 # \(u\), the predictor excludes \(u\) from the neighbour set, keeps up to
 # `k_neighbors` users with positive Pearson correlation, and predicts:
-#
-# $$
+# # $$
 # \hat r_{ui}=\bar r_u+
 # \frac{\sum_{v \in N_u(i)}s(u,v)(r_{vi}-\bar r_v)}
 # {\sum_{v \in N_u(i)}s(u,v)}.
 # $$
-#
-# A neighbour contributes only if they rated candidate item \(i\). Negative and
+# # A neighbour contributes only if they rated candidate item \(i\). Negative and
 # zero similarities are deliberately excluded in this introductory version.
 
 # CELL ********************
@@ -440,8 +423,7 @@ print(user_recommendations.to_string(index=False))
 # MARKDOWN ********************
 
 # ## 4. What the Example Does — and Does Not Do
-#
-# - Similarities and means ignore missing ratings.
+# # - Similarities and means ignore missing ratings.
 # - Item-based scores use ratings, similarity weights, and normalization.
 # - User-based scores select positive neighbours that rated each candidate.
 # - Already-rated items are removed before candidates are ranked.
@@ -451,6 +433,5 @@ print(user_recommendations.to_string(index=False))
 #   or new item has no interaction history. Matrix factorization can model
 #   sparse observed interactions efficiently, but it does not solve cold start
 #   unless side information or an explicit onboarding strategy is added.
-#
-# Continue with **Exercise 1** to implement and evaluate these ideas. Tutorial 2
+# # Continue with **Exercise 1** to implement and evaluate these ideas. Tutorial 2
 # then advances from neighbourhood methods to regularized matrix factorization.

@@ -11,10 +11,8 @@
 # MARKDOWN ********************
 
 # # Vectorizing Language
-#
-# Embeddings are both conceptually clever and practically effective.
-#
-# So let's try them for the sentiment analysis model you built for the restaurant. Then you can find the most similar review in the data set given some example text. It's a task where you can easily judge for yourself how well the embeddings work.
+# # Embeddings are both conceptually clever and practically effective.
+# # So let's try them for the sentiment analysis model you built for the restaurant. Then you can find the most similar review in the data set given some example text. It's a task where you can easily judge for yourself how well the embeddings work.
 
 # CELL ********************
 
@@ -80,8 +78,7 @@ review_data.head()
 # MARKDOWN ********************
 
 # Here's an example of loading some document vectors.
-#
-# Calculating 44,500 document vectors takes about 20 minutes, so we'll get only the first 100. To save time, we'll load pre-saved document vectors for the hands-on coding exercises.
+# # Calculating 44,500 document vectors takes about 20 minutes, so we'll get only the first 100. To save time, we'll load pre-saved document vectors for the hands-on coding exercises.
 
 # CELL ********************
 
@@ -102,11 +99,9 @@ vectors.shape
 # MARKDOWN ********************
 
 # The result is a matrix of 100 rows and 300 columns.
-#
-# Why 100 rows?
+# # Why 100 rows?
 # Because we have 1 row for each column.
-#
-# Why 300 columns?
+# # Why 300 columns?
 # This is the same length as word vectors. See if you can figure out why document vectors have the same length as word vectors (some knowledge of linear algebra or vector math would be needed to figure this out).
 
 # MARKDOWN ********************
@@ -128,10 +123,8 @@ vectors = np.load('/lakehouse/default/Files/AMLAI_Aula5/review_vectors.npy')
 # MARKDOWN ********************
 
 # # 1) Training a Model on Document Vectors
-#
-# Next you'll train a `LinearSVC` model using the document vectors. It runs pretty quick and works well in high dimensional settings like you have here.
-#
-# After running the LinearSVC model, you might try experimenting with other types of models to see whether it improves your results.
+# # Next you'll train a `LinearSVC` model using the document vectors. It runs pretty quick and works well in high dimensional settings like you have here.
+# # After running the LinearSVC model, you might try experimenting with other types of models to see whether it improves your results.
 
 # CELL ********************
 
@@ -206,14 +199,10 @@ q_1.assert_check_passed()
 # MARKDOWN ********************
 
 # # Document Similarity
-#
-# For the same tea house review, find the most similar review in the dataset using cosine similarity.
-#
-# # 2) Centering the Vectors
-#
-# Sometimes people center document vectors when calculating similarities. That is, they calculate the mean vector from all documents, and they subtract this from each individual document's vector. Why do you think this could help with similarity metrics?
-#
-# Run the following line after you've decided your answer.
+# # For the same tea house review, find the most similar review in the dataset using cosine similarity.
+# # # 2) Centering the Vectors
+# # Sometimes people center document vectors when calculating similarities. That is, they calculate the mean vector from all documents, and they subtract this from each individual document's vector. Why do you think this could help with similarity metrics?
+# # Run the following line after you've decided your answer.
 
 # CELL ********************
 
@@ -230,8 +219,7 @@ q_2.solution()
 # MARKDOWN ********************
 
 # # 3) Find the most similar review
-#
-# Given an example review below, find the most similar document within the Yelp dataset using the cosine similarity.
+# # Given an example review below, find the most similar document within the Yelp dataset using the cosine similarity.
 
 # CELL ********************
 
@@ -327,10 +315,8 @@ print(review_data.iloc[most_similar].text)
 # MARKDOWN ********************
 
 # Even though there are many different sorts of businesses in our Yelp dataset, you should have found another tea shop.
-#
-# # 4) Looking at similar reviews
-#
-# If you look at other similar reviews, you'll see many coffee shops. Why do you think reviews for coffee are similar to the example review which mentions only tea?
+# # # 4) Looking at similar reviews
+# # If you look at other similar reviews, you'll see many coffee shops. Why do you think reviews for coffee are similar to the example review which mentions only tea?
 
 # CELL ********************
 
@@ -347,7 +333,5 @@ q_4.solution()
 # MARKDOWN ********************
 
 # # Congratulations!
-#
-# You've finished the first part of NLP tutorial. It's an exciting field that will help you make use of vast amounts of data you didn't know how to work with before.
-#
-# Keep going
+# # You've finished the first part of NLP tutorial. It's an exciting field that will help you make use of vast amounts of data you didn't know how to work with before.
+# # Keep going

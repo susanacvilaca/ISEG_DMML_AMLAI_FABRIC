@@ -30,10 +30,8 @@
 # - adapt machine learning methods to a variety of forecasting tasks.
 # 
 # As part of the exercises, we will work with [Store Sales - Time Series Forecasting] where you're tasked with forecasting sales for *Corporación Favorita* (a large Ecuadorian-based grocery retailer) in almost 1800 product categories.
-#
-# # What is a Time Series? #
-#
-# The basic object of forecasting is the **time series**, which is a set of observations recorded over time. In forecasting applications, the observations are typically recorded with a regular frequency, like daily or monthly.
+# # # What is a Time Series? #
+# # The basic object of forecasting is the **time series**, which is a set of observations recorded over time. In forecasting applications, the observations are typically recorded with a regular frequency, like daily or monthly.
 
 # CELL ********************
 
@@ -59,18 +57,13 @@ df.head()
 # MARKDOWN ********************
 
 # This series records the number of hardcover book sales at a retail store over 30 days. Notice that we have a single column of observations `Hardcover` with a time index `Date`.
-#
-# # Linear Regression with Time Series #
-#
-# For the first part of this course, we'll use the linear regression algorithm to construct forecasting models. Linear regression is widely used in practice and adapts naturally to even complex forecasting tasks.
-#
-# The **linear regression** algorithm learns how to make a weighted sum from its input features. For two features, we would have:
-#
-# ```
+# # # Linear Regression with Time Series #
+# # For the first part of this course, we'll use the linear regression algorithm to construct forecasting models. Linear regression is widely used in practice and adapts naturally to even complex forecasting tasks.
+# # The **linear regression** algorithm learns how to make a weighted sum from its input features. For two features, we would have:
+# # ```
 # target = weight_1 * feature_1 + weight_2 * feature_2 + bias
 # ```
-#
-# During training, the regression algorithm learns values for the parameters `weight_1`, `weight_2`, and `bias` that best fit the `target`. (This algorithm is often called *ordinary least squares* since it chooses values that minimize the squared error between the target and the predictions.) The weights are also called *regression coefficients* and the `bias` is also called the *intercept* because it tells you where the graph of this function crosses the y-axis.
+# # During training, the regression algorithm learns values for the parameters `weight_1`, `weight_2`, and `bias` that best fit the `target`. (This algorithm is often called *ordinary least squares* since it chooses values that minimize the squared error between the target and the predictions.) The weights are also called *regression coefficients* and the `bias` is also called the *intercept* because it tells you where the graph of this function crosses the y-axis.
 # 
 # ### Time-step features
 # 
@@ -96,12 +89,10 @@ df.head()
 # MARKDOWN ********************
 
 # Linear regression with the time dummy produces the model:
-#
-# ```
+# # ```
 # target = weight * time + bias
 # ```
-#
-# The time dummy then lets us fit curves to time series in a *time plot*, where `Time` forms the x-axis.
+# # The time dummy then lets us fit curves to time series in a *time plot*, where `Time` forms the x-axis.
 
 # CELL ********************
 
@@ -140,10 +131,8 @@ ax.set_title('Time Plot of Hardcover Sales');
 # MARKDOWN ********************
 
 # Time-step features let you model **time dependence**. A series is time dependent if its values can be predicted from the time they occured. In the *Hardcover Sales* series, we can predict that sales later in the month are generally higher than sales earlier in the month.
-#
-# ### Lag features
-#
-# To make a **lag feature** we shift the observations of the target series so that they appear to have occured later in time. Here we've created a 1-step lag feature, though shifting by multiple steps is possible too.
+# # ### Lag features
+# # To make a **lag feature** we shift the observations of the target series so that they appear to have occured later in time. Here we've created a 1-step lag feature, though shifting by multiple steps is possible too.
 
 # CELL ********************
 
@@ -162,12 +151,10 @@ df.head()
 # MARKDOWN ********************
 
 # Linear regression with a lag feature produces the model:
-#
-# ```
+# # ```
 # target = weight * lag + bias
 # ```
-#
-# So lag features let us fit curves to *lag plots* where each observation in a series is plotted against the previous observation.
+# # So lag features let us fit curves to *lag plots* where each observation in a series is plotted against the previous observation.
 
 # CELL ********************
 
@@ -186,18 +173,14 @@ ax.set_title('Lag Plot of Hardcover Sales');
 # MARKDOWN ********************
 
 # You can see from the lag plot that sales on one day (`Hardcover`) are correlated with sales from the previous day (`Lag_1`). When you see a relationship like this, you know a lag feature will be useful.
-#
-# More generally, lag features let you model **serial dependence**. A time series has serial dependence when an observation can be predicted from previous observations. In *Hardcover Sales*, we can predict that high sales on one day usually mean high sales the next day.
-#
-# ---
+# # More generally, lag features let you model **serial dependence**. A time series has serial dependence when an observation can be predicted from previous observations. In *Hardcover Sales*, we can predict that high sales on one day usually mean high sales the next day.
+# # ---
 # 
 # Adapting machine learning algorithms to time series problems is largely about feature engineering with the time index and lags. For most of the course, we use linear regression for its simplicity, but these features will be useful whichever algorithm you choose for your forecasting task.
 # 
 # # Example - Tunnel Traffic #
-#
-# *Tunnel Traffic* is a time series describing the number of vehicles traveling through the Baregg Tunnel in Switzerland each day from November 2003 to November 2005. In this example, we'll get some practice applying linear regression to time-step features and lag features.
-#
-# The hidden cell sets everything up.
+# # *Tunnel Traffic* is a time series describing the number of vehicles traveling through the Baregg Tunnel in Switzerland each day from November 2003 to November 2005. In this example, we'll get some practice applying linear regression to time-step features and lag features.
+# # The hidden cell sets everything up.
 
 # CELL ********************
 
@@ -406,7 +389,5 @@ ax = y_pred.plot()
 # MARKDOWN ********************
 
 # The best time series models will usually include some combination of time-step features and lag features. Over the next few lessons, we'll learn how to engineer features modeling the most common patterns in time series using the features from this lesson as a starting point.
-#
-# # Your Turn #
-#
-# Move on to the Exercise, where you'll begin [**forecasting Store Sales**] using the techniques you learned in this tutorial.
+# # # Your Turn #
+# # Move on to the Exercise, where you'll begin [**forecasting Store Sales**] using the techniques you learned in this tutorial.

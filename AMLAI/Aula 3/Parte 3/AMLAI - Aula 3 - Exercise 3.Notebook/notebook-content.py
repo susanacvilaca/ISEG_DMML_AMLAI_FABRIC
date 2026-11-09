@@ -27,10 +27,8 @@
 # MARKDOWN ********************
 
 # # Introduction #
-#
-# In this exercise you'll train a neural network on the *Fuel Economy* dataset and then explore the effect of the learning rate and batch size on SGD.
-#
-# When you're ready, run this next cell to set everything up!
+# # In this exercise you'll train a neural network on the *Fuel Economy* dataset and then explore the effect of the learning rate and batch size on SGD.
+# # When you're ready, run this next cell to set everything up!
 
 # CELL ********************
 
@@ -90,8 +88,7 @@ from learntools.deep_learning_intro.ex3 import *
 # MARKDOWN ********************
 
 # In the *Fuel Economy* dataset your task is to predict the fuel economy of an automobile given features like its type of engine or the year it was made.
-#
-# First load the dataset by running the cell below.
+# # First load the dataset by running the cell below.
 
 # CELL ********************
 
@@ -176,8 +173,7 @@ model = keras.Sequential([
 # MARKDOWN ********************
 
 # # 1) Add Loss and Optimizer
-#
-# Before training the network we need to define the loss and optimizer we'll use. Using the model's `compile` method, add the Adam optimizer and MAE loss.
+# # Before training the network we need to define the loss and optimizer we'll use. Using the model's `compile` method, add the Adam optimizer and MAE loss.
 
 # CELL ********************
 
@@ -210,8 +206,7 @@ q_1.solution()
 # MARKDOWN ********************
 
 # # 2) Train Model
-#
-# Once you've defined the model and compiled it with a loss and optimizer you're ready for training. Train the network for 200 epochs with a batch size of 128. The input data is `X` with target `y`.
+# # Once you've defined the model and compiled it with a loss and optimizer you're ready for training. Train the network for 200 epochs with a batch size of 128. The input data is `X` with target `y`.
 
 # CELL ********************
 
@@ -263,8 +258,7 @@ history_df.loc[5:, ['loss']].plot();
 # MARKDOWN ********************
 
 # # 3) Evaluate Training
-#
-# If you trained the model longer, would you expect the loss to decrease further?
+# # If you trained the model longer, would you expect the loss to decrease further?
 
 # CELL ********************
 
@@ -284,12 +278,9 @@ q_3.check()
 # - How long it takes to train a model
 # - How noisy the learning curves are
 # - How small the loss becomes
-#
-# To get a better understanding of these two parameters, we'll look at the linear model, our ppsimplest neural network. Having only a single weight and a bias, it's easier to see what effect a change of parameter has.
-#
-# The next cell will generate an animation like the one in the tutorial. Change the values for `learning_rate`, `batch_size`, and `num_examples` (how many data points) and then run the cell. (It may take a moment or two.) Try the following combinations, or try some of your own:
-#
-# | `learning_rate` | `batch_size` | `num_examples` |
+# # To get a better understanding of these two parameters, we'll look at the linear model, our ppsimplest neural network. Having only a single weight and a bias, it's easier to see what effect a change of parameter has.
+# # The next cell will generate an animation like the one in the tutorial. Change the values for `learning_rate`, `batch_size`, and `num_examples` (how many data points) and then run the cell. (It may take a moment or two.) Try the following combinations, or try some of your own:
+# # | `learning_rate` | `batch_size` | `num_examples` |
 # |-----------------|--------------|----------------|
 # | 0.05            | 32           | 256            |
 # | 0.05            | 2            | 256            |
@@ -328,8 +319,7 @@ animate_sgd(
 # MARKDOWN ********************
 
 # # 4) Learning Rate and Batch Size
-#
-# What effect did changing these parameters have? After you've thought about it, run the cell below for some discussion.
+# # What effect did changing these parameters have? After you've thought about it, run the cell below for some discussion.
 
 # CELL ********************
 
@@ -346,5 +336,4 @@ q_4.check()
 # MARKDOWN ********************
 
 # # Keep Going #
-#
-# Learn how to [**improve your model's performance**] by tuning capacity or adding an early stopping callback.
+# # Learn how to [**improve your model's performance**] by tuning capacity or adding an early stopping callback.

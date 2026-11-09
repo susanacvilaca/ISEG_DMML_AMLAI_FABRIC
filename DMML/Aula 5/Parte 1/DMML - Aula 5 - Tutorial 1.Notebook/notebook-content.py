@@ -29,15 +29,12 @@
 # - Reduce the risk of overfitting
 # - Potentially increase model's performance
 # - Reduce model's complexity such that interpretation becomes easier
-#
-# The objective of this tutorial is to introduce the fundamental of feature selection in Python.
-#
-# We will discuss three key methods to perform feature selection together with their implementation in Python:
+# # The objective of this tutorial is to introduce the fundamental of feature selection in Python.
+# # We will discuss three key methods to perform feature selection together with their implementation in Python:
 # 1. [Filter methods](#section 1.0.)
 # 2. [Wrapper methods](#section 2.0.)
 # 3. [Embedded methods](#section 3.0.)
-#
-# Before we get started, let's import the necessary Python libraries.
+# # Before we get started, let's import the necessary Python libraries.
 
 
 # CELL ********************
@@ -104,8 +101,7 @@ X_data.head()
 # In filter methods, features are selected independently from any machine algorithms. Filter methods generally use a specific criteria, such as scores in statistical test and variances, to rank the importance of individual features. Filter methods have some advantages:
 # - Because of their independency to the selection of machine learning algorithms, they can be used as the input of any machine learning models.
 # - They are generally effective in computation time.
-#
-# The main weakness of filter methods is that they do not consider the relationships among features. That's why they are mainly used as the pre-processing step of any feature selection pipeline. We will discuss three types of filter selection methods:
+# # The main weakness of filter methods is that they do not consider the relationships among features. That's why they are mainly used as the pre-processing step of any feature selection pipeline. We will discuss three types of filter selection methods:
 # 1. [ANOVA F-value](#section 1.1.)
 # 2. [Variance Threshold](#section 1.2.)
 # 3. [Mutual Information](#section 1.3.)
@@ -118,12 +114,10 @@ X_data.head()
 
 # ## 1.1. ANOVA F-value
 # ANOVA F-value method estimates the degree of linearity between the input feature (i.e., predictor) and the output feature. A high F-value indicates high degree of linearity and a low F-value indicates low degree of linearity. The main disadvantage of using ANOVA F-value is it only captures linear relationships between input and output feature. In other words, any non-linear relationships cannot be detected by F-value.
-#
-# We can use Scikit-learn to calculate ANOVA F-value. First, we need to load the library. Scikit-learn has two functions to calculate F-value:
+# # We can use Scikit-learn to calculate ANOVA F-value. First, we need to load the library. Scikit-learn has two functions to calculate F-value:
 # - **f_classif**, which calculate F-value between input and output feature for classification task
 # - **f_regression**, which calculate F-value between input and output feature for classification task
-#
-# We will use **f_classif** because the Iris dataset entails classification task.
+# # We will use **f_classif** because the Iris dataset entails classification task.
 
 # CELL ********************
 
@@ -186,10 +180,8 @@ plt.show()
 
 # ## 1.2. Variance Threshold
 # Variance threshold method removes features whose variance below a pre-defined cutoff value. It is based on the notion that features that do not vary much within themselves have low predictive power. The main weakness of variance threshold is that it does not consider  the relationship of input features with the output feature.
-#
-# It should be noted that, before performing variance thresholding, all features should be standardized so they will have the same scale.
-#
-# Scikit-learn provides **VarianceThreshold** function to perform variance threshold method.
+# # It should be noted that, before performing variance thresholding, all features should be standardized so they will have the same scale.
+# # Scikit-learn provides **VarianceThreshold** function to perform variance threshold method.
 
 # CELL ********************
 
@@ -283,12 +275,10 @@ print('Number of features after variance thresholding: {}'.format(X_data_new.sha
 
 # ## 1.3. Mutual Information
 # Mutual information (MI) measures the dependence of one variable to another by quantifying the amount of information obtained about one feature, through the other feature. MI is symmetric and non-negative, and is zero if and only if the input and output feature are independent. Unlike ANOVA F-value, mutual information can capture non-linear relationships between input and output feature.
-#
-# We can use Scikit-learn to calculate MI. Scikit-learn has two functions to calculate MI:
+# # We can use Scikit-learn to calculate MI. Scikit-learn has two functions to calculate MI:
 # - **mutual_info_classif**, which calculate MI for classification task
 # - **mutual_info_regression**, which calculate MI for regression task
-#
-# We will use **mutual_info_classif** because the Iris dataset entails a classification task.
+# # We will use **mutual_info_classif** because the Iris dataset entails a classification task.
 
 # CELL ********************
 
@@ -366,8 +356,7 @@ from sklearn.feature_selection import SelectKBest
 # **SelectKBest** has two important parameters:
 # - *score_func*: the filter function that is used for feature selection
 # - *k*: the number of top features to select
-#
-# Let's demonstrate **SelectKBest** by using ANOVA F-value as our filter method. We will select the top two features based on the ANOVA F-value.
+# # Let's demonstrate **SelectKBest** by using ANOVA F-value as our filter method. We will select the top two features based on the ANOVA F-value.
 
 # CELL ********************
 
@@ -392,8 +381,7 @@ print('Number of features after feature selection: {}'.format(X_data_new.shape[1
 # MARKDOWN ********************
 
 # As we can see, **SelectKBest** automatically eliminate two features that have the lowest F-value.
-#
-# We can identify the name of selected features by calling **get_support** method.
+# # We can identify the name of selected features by calling **get_support** method.
 
 # CELL ********************
 
@@ -420,19 +408,16 @@ for feature_list_index in skb.get_support(indices=True):
 
 # # 2.0. Wrapper Methods
 # Wrapper methods try to find a subset of features that yield the best performance for a model by training, evaluating, and comparing the model with different combinations of features. Wrapper methods enable the detection of relationships among features. However, they can be computationally expensive, especially if the number of features is high. The risk of overfitting is also high if the number of instances in the dataset is insufficient.
-#
-# There are some diferrences between filter and wrapper methods:
+# # There are some diferrences between filter and wrapper methods:
 # - Filter methods do not incorporate a machine learning model in order to determine if a feature is good or bad whereas wrapper methods use a machine learning model and train it the feature to decide if it is essential or not.
 # - Filter methods are much faster compared to wrapper methods as they do not involve training the models. On the other hand, wrapper methods are computationally costly, and in the case of massive datasets, wrapper methods are not the most effective feature selection method to consider.
 # - Filter methods may fail to find the best subset of features in situations when there is not enough data to model the statistical correlation of the features, but wrapper methods can always provide the best subset of features because of their exhaustive nature.
 # - Using features from wrapper methods in your final machine learning model can lead to overfitting as wrapper methods already train machine learning models with the features and it affects the true power of learning. But the features from filter methods will not lead to overfitting in most of the cases.
-#
-# We will discuss three wrapper methods:
+# # We will discuss three wrapper methods:
 # 1. [Exhaustive feature selection (EFS)](#section 2.1.)
 # 2. [Sequential forward selection (SFS)](#section 2.2.)
 # 3. [Sequential backward selection (SBS)](#section 2.3.)
-#
-# Each will be discussed in the following.
+# # Each will be discussed in the following.
 
 
 # MARKDOWN ********************
@@ -450,10 +435,8 @@ for feature_list_index in skb.get_support(indices=True):
 # - *feature_1* and *feature_3*
 # - *feature_2* and *feature_3*
 # - *feature_1*, *feature_2*, and *feature_3*
-#
-# EFS selects a subset that generates the best performance (e.g., accuracy, precision, recall, etc.) of the model being considered.
-#
-# Mlxtend provides **ExhaustiveFeatureSelector** function to perform EFS.
+# # EFS selects a subset that generates the best performance (e.g., accuracy, precision, recall, etc.) of the model being considered.
+# # Mlxtend provides **ExhaustiveFeatureSelector** function to perform EFS.
 
 # CELL ********************
 
@@ -475,8 +458,7 @@ from mlxtend.feature_selection import ExhaustiveFeatureSelector as EFS
 # - *max_features*: the maximum number of features to select
 # - *scoring*: the metric to use to evaluate the classifier
 # - *cv*: the number of cross-validations to perform
-#
-# In this example, we use logistic regression as our classifier/estimator.
+# # In this example, we use logistic regression as our classifier/estimator.
 
 # CELL ********************
 
@@ -545,8 +527,7 @@ print('Number of features after transformation: {}'.format(X_data_new.shape[1]))
 # MARKDOWN ********************
 
 # There is no difference between the dataset after and before the transformation because the subset that yields the best score include all of the features.
-#
-# We can see the performance of each subset of features by calling **get_metric_dict**.
+# # We can see the performance of each subset of features by calling **get_metric_dict**.
 
 # CELL ********************
 
@@ -596,8 +577,7 @@ plt.show()
 
 # ## 2.2. Sequential Forward Selection (SFS)
 # SFS finds the best subset of feature by adding a feature that best improves the model at each iteration.
-#
-# Mlxtend provides **SequentialFeatureSelector** function to perform SFS.
+# # Mlxtend provides **SequentialFeatureSelector** function to perform SFS.
 
 # CELL ********************
 
@@ -619,8 +599,7 @@ from mlxtend.feature_selection import SequentialFeatureSelector as SFS
 # - *forward*: use SFS if True and use SBS if False
 # - *scoring*: the metric to use to evaluate the classifier
 # - *cv*: the number of cross-validations to perform
-#
-# In this example, we use logistic regression as our classifier/estimator.
+# # In this example, we use logistic regression as our classifier/estimator.
 
 # CELL ********************
 
@@ -674,8 +653,7 @@ print('Number of features after transformation: {}'.format(X_data_new.shape[1]))
 # MARKDOWN ********************
 
 # There is no difference between the dataset after and before the transformation because the subset that yields the best score include all of the features.
-#
-# We can see the performance of each subset of features considered by SFS by calling **subsets_**.
+# # We can see the performance of each subset of features considered by SFS by calling **subsets_**.
 
 # CELL ********************
 
@@ -723,8 +701,7 @@ plt.show()
 
 # ### 2.3. Sequential Backward Selection (SBS)
 # SBS is the opposite of SFS. SBS starts with all features and removes the feature that has the least importance to the model at each iteration.
-#
-# To perform SBS use, we can use **SequentialFeatureSelector** by Mlxtend. This is the same function that we use to perform SFS. The different is we have to set the *k_features* parameter to False.
+# # To perform SBS use, we can use **SequentialFeatureSelector** by Mlxtend. This is the same function that we use to perform SFS. The different is we have to set the *k_features* parameter to False.
 
 # CELL ********************
 
@@ -778,8 +755,7 @@ print('Number of features after transformation: {}'.format(X_data_new.shape[1]))
 # MARKDOWN ********************
 
 # There is no difference between the dataset after and before the transformation because the subset that yields the best score include all of the features.
-#
-# We can see the performance of each subset of features considered by SFS by calling **subsets_**.
+# # We can see the performance of each subset of features considered by SFS by calling **subsets_**.
 
 # CELL ********************
 
@@ -848,24 +824,21 @@ print('Best subset by SBS:', sbs.k_feature_names_)
 # MARKDOWN ********************
 
 # # 3.0. Embedded Methods (OPTIONAL !)
-#
-# We do not look so much to these methods in class as the others however they can be used
+# # We do not look so much to these methods in class as the others however they can be used
 # Embedded methods combine the strong points of filter and wrapper methods by taking advantage of machine algorithms that have their own built-in feature selection process. They integrate a feature selection step as a part of the training process (i.e., feature selection and training process are performed simultaneously). Embedded methods generally have a more efficient process than wrapper methods because they eliminate the need to retrain every single subset of features being examined. Some of machine algorithms that can be used for feature selection are:
 # - LASSO regression
 # - Ridge regression
 # - Decision tree
 # - Random forest
 # - Support vector machine
-#
-# In the next section, we will focus on feature selection using random forest which we will discuss in the next class and as so you can return to this topic after next class.
+# # In the next section, we will focus on feature selection using random forest which we will discuss in the next class and as so you can return to this topic after next class.
 
 # MARKDOWN ********************
 
 # ## 3.1. Feature Selection Using Random Forest
 # Random forest is one of the most popular learning algorithms used for feature selection in a data science workflow. As explained by Chris Albon:
 # >*"... the tree-based strategies used by random forests naturally ranks by how well they improve the purity of the node. This mean decrease in impurity over all trees (called gini impurity). Nodes with the greatest decrease in impurity happen at the start of the trees, while notes with the least decrease in impurity occur at the end of trees. Thus, by pruning trees below a particular node, we can create a subset of the most important features."*
-#
-# To perform feature selection using random forest classifier, let's first import **RandomForestClassifier** from Scikit-learn.
+# # To perform feature selection using random forest classifier, let's first import **RandomForestClassifier** from Scikit-learn.
 
 # CELL ********************
 
@@ -947,8 +920,7 @@ from sklearn.feature_selection import SelectFromModel
 # **SelectFromModel** has two important parameters:
 # - *estimator*: the machine learning algorithm used to select features
 # - *threshold*: the threshold value to use for feature selection. Features whose importance is greater or equal are kept while the others are discarded.
-#
-# Let's demonstrate **SelectFromModel** by a random forest classifier with gini importance. We will select features that have importance above 0.2.
+# # Let's demonstrate **SelectFromModel** by a random forest classifier with gini importance. We will select features that have importance above 0.2.
 
 # CELL ********************
 

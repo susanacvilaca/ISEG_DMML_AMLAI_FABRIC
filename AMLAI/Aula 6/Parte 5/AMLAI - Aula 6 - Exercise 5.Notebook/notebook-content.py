@@ -82,8 +82,7 @@ family_sales = (
 # MARKDOWN ********************
 
 # -------------------------------------------------------------------------------
-#
-# In the next two questions, you'll create a boosted hybrid for the *Store Sales* dataset by implementing a new Python class. Run this cell to create the initial class definition. You'll add `fit` and `predict` methods to give it a scikit-learn like interface.
+# # In the next two questions, you'll create a boosted hybrid for the *Store Sales* dataset by implementing a new Python class. Run this cell to create the initial class definition. You'll add `fit` and `predict` methods to give it a scikit-learn like interface.
 
 
 # CELL ********************
@@ -106,8 +105,7 @@ class BoostedHybrid:
 # MARKDOWN ********************
 
 # # 1) Define fit method for boosted hybrid
-#
-# Complete the `fit` definition for the `BoostedHybrid` class. Refer back to steps 1 and 2 from the **Hybrid Forecasting with Residuals** section in the tutorial if you need.
+# # Complete the `fit` definition for the `BoostedHybrid` class. Refer back to steps 1 and 2 from the **Hybrid Forecasting with Residuals** section in the tutorial if you need.
 
 # CELL ********************
 
@@ -165,10 +163,8 @@ q_1.solution()
 # MARKDOWN ********************
 
 # -------------------------------------------------------------------------------
-#
-# # 2) Define predict method for boosted hybrid
-#
-# Now define the `predict` method for the `BoostedHybrid` class. Refer back to step 3 from the **Hybrid Forecasting with Residuals** section in the tutorial if you need.
+# # # 2) Define predict method for boosted hybrid
+# # Now define the `predict` method for the `BoostedHybrid` class. Refer back to step 3 from the **Hybrid Forecasting with Residuals** section in the tutorial if you need.
 
 # CELL ********************
 
@@ -292,8 +288,7 @@ q_3.solution()
 # MARKDOWN ********************
 
 # -------------------------------------------------------------------------------
-#
-# Depending on your problem, you might want to use other hybrid combinations than the linear regression + XGBoost hybrid you've created in the previous questions. Run the next cell to try other algorithms from scikit-learn.
+# # Depending on your problem, you might want to use other hybrid combinations than the linear regression + XGBoost hybrid you've created in the previous questions. Run the next cell to try other algorithms from scikit-learn.
 
 # CELL ********************
 
@@ -323,8 +318,7 @@ model = BoostedHybrid(
 # MARKDOWN ********************
 
 # These are just some suggestions. You might discover other algorithms you like in the scikit-learn [User Guide](https://scikit-learn.org/stable/supervised_learning.html).
-#
-# Use the code in this cell to see the predictions your hybrid makes.
+# # Use the code in this cell to see the predictions your hybrid makes.
 
 # CELL ********************
 
@@ -359,8 +353,7 @@ for ax, family in zip(axs, families):
 # MARKDOWN ********************
 
 # # 4) Fit with different learning algorithms
-#
-# Once you're ready to move on, run the next cell for credit on this question.
+# # Once you're ready to move on, run the next cell for credit on this question.
 
 # CELL ********************
 
@@ -377,5 +370,4 @@ q_4.check()
 # MARKDOWN ********************
 
 # # Keep Going #
-#
-# [**Convert any forecasting task**] to a machine learning problem with four ML forecasting strategies.
+# # [**Convert any forecasting task**] to a machine learning problem with four ML forecasting strategies.

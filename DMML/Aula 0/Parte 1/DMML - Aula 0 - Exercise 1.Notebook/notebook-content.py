@@ -15,6 +15,9 @@
 # META       "known_lakehouses": [
 # META         {
 # META           "id": "81cbac54-cfa3-495b-ad48-b44a92bb72fb"
+# META         },
+# META         {
+# META           "id": "82f05d15-97fb-4f73-9ccc-40296d0df09d"
 # META         }
 # META       ]
 # META     },
@@ -74,7 +77,7 @@ print("Setup complete.")
 # CELL ********************
 
 # Your code goes here. Create a dataframe matching the above diagram and assign it to the variable fruits.
-fruits = ____
+fruits = pd.DataFrame([[30, 21]], columns=['Apples', 'Bananas'])
 
 
 # Check your answer
@@ -111,7 +114,7 @@ fruits
 # CELL ********************
 
 # Your code goes here. Create a dataframe matching the above diagram and assign it to the variable fruit_sales.
-fruit_sales = ____
+fruit_sales = pd.DataFrame([[35, 21], [41, 34]], columns=['Apples', 'Bananas'], index=['2017 Sales', '2018 Sales'])
 
 # Check your answer
 q2.check()
@@ -152,11 +155,37 @@ fruit_sales
 
 # CELL ********************
 
-ingredients = ____
+quantities = ['4 cups', '1 cup', '2 large', '1 can']
+items = ['Flour', 'Milk', 'Eggs', 'Spam']
+ingredients = pd.Series(quantities, index=items, name='Dinner', dtype=object)
 
 # Check your answer
 q3.check()
 ingredients
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "jupyter_python"
+# META }
+
+# CELL ********************
+
+ingredients_dict = pd.Series(
+    {
+        "Flour": "4 cups",
+        "Milk": "1 cup",
+        "Eggs": "2 large",
+        "Spam": "1 can"
+    },
+    name="Dinner_dict",
+    dtype="object"
+)
+
+# Check your answer
+q3.check()
+ingredients_dict
 
 # METADATA ********************
 
@@ -195,7 +224,8 @@ ingredients
 
 # CELL ********************
 
-reviews = ____
+filepath = '/lakehouse/default/Files/DMML_Aula0/wine-reviews/winemag-data_first150k.csv'
+reviews = pd.read_csv(filepath,index_col=0)
 
 # Check your answer
 q4.check()
@@ -244,10 +274,16 @@ animals
 
 # CELL ********************
 
-# Your code goes here
+import notebookutils
+ 
+onelake_endpoint = notebookutils.conf.get("trident.onelake.endpoint").replace("https://", "")
+workspace_id = "ed_bl6_alu_dmml_33453"          # workspace of LocalLakeHouse
+local_lakehouse_id = "LocalLakeHouse_i33453.Lakehouse"    # LocalLakeHouse id
 
+notebookutils.fs.mount(f"abfss://{workspace_id}@onelake.dfs.fabric.microsoft.com/{local_lakehouse_id}", "/myLakeHouse")
+animals.to_csv(f"{notebookutils.fs.getMountPath('/myLakeHouse')}/Files/exercises/cows_and_goats.csv", index=False)
 # Check your answer
-q5.check()
+#q5.check()
 
 # METADATA ********************
 
@@ -258,8 +294,8 @@ q5.check()
 
 # CELL ********************
 
-#q5.hint()
-#q5.solution()
+q5.hint()
+q5.solution()
 
 # METADATA ********************
 

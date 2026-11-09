@@ -27,10 +27,8 @@
 # MARKDOWN ********************
 
 # # Introduction #
-#
-# In this exercise, you'll work on building some intuition around feature extraction. First, we'll walk through the example we did in the tutorial again, but this time, with a kernel you choose yourself. We've mostly been working with images in this course, but what's behind all of the operations we're learning about is mathematics. So, we'll also take a look at how these feature maps can be represented instead as arrays of numbers and what effect convolution with a kernel will have on them.
-#
-# Run the cell below to get started!
+# # In this exercise, you'll work on building some intuition around feature extraction. First, we'll walk through the example we did in the tutorial again, but this time, with a kernel you choose yourself. We've mostly been working with images in this course, but what's behind all of the operations we're learning about is mathematics. So, we'll also take a look at how these feature maps can be represented instead as arrays of numbers and what effect convolution with a kernel will have on them.
+# # Run the cell below to get started!
 
 # CELL ********************
 
@@ -88,8 +86,7 @@ tf.config.run_functions_eagerly(True)
 # MARKDOWN ********************
 
 # # Apply Transformations #
-#
-# The next few exercises walk through feature extraction just like the example in the tutorial. Run the following cell to load an image we'll use for the next few exercises.
+# # The next few exercises walk through feature extraction just like the example in the tutorial. Run the following cell to load an image we'll use for the next few exercises.
 
 # CELL ********************
 
@@ -142,10 +139,8 @@ plt.tight_layout()
 # MARKDOWN ********************
 
 # # 1) Define Kernel #
-#
-# Use the next code cell to define a kernel. You have your choice of what kind of kernel to apply. One thing to keep in mind is that the *sum* of the numbers in the kernel determines how bright the final image is. Generally, you should try to keep the sum of the numbers between 0 and 1 (though that's not required for a correct answer).
-#
-# In general, a kernel can have any number of rows and columns. For this exercise, let's use a $3 \times 3$ kernel, which often gives the best results. Define a kernel with `tf.constant`.
+# # Use the next code cell to define a kernel. You have your choice of what kind of kernel to apply. One thing to keep in mind is that the *sum* of the numbers in the kernel determines how bright the final image is. Generally, you should try to keep the sum of the numbers between 0 and 1 (though that's not required for a correct answer).
+# # In general, a kernel can have any number of rows and columns. For this exercise, let's use a $3 \times 3$ kernel, which often gives the best results. Define a kernel with `tf.constant`.
 
 # CELL ********************
 
@@ -201,8 +196,7 @@ kernel = tf.cast(kernel, dtype=tf.float32)
 # MARKDOWN ********************
 
 # # 2) Apply Convolution #
-#
-# Now we'll apply the kernel to the image by a convolution. The *layer* in Keras that does this is `layers.Conv2D`. What is the *backend function* in TensorFlow that performs the same operation?
+# # Now we'll apply the kernel to the image by a convolution. The *layer* in Keras that does this is `layers.Conv2D`. What is the *backend function* in TensorFlow that performs the same operation?
 
 # CELL ********************
 
@@ -262,10 +256,8 @@ plt.show();
 # MARKDOWN ********************
 
 # Can you see how the kernel you chose relates to the feature map it produced?
-#
-# # 3) Apply ReLU #
-#
-# Now detect the feature with the ReLU function. In Keras, you'll usually use this as the activation function in a `Conv2D` layer. What is the *backend function* in TensorFlow that does the same thing?
+# # # 3) Apply ReLU #
+# # Now detect the feature with the ReLU function. In Keras, you'll usually use this as the activation function in a `Conv2D` layer. What is the *backend function* in TensorFlow that does the same thing?
 
 # CELL ********************
 
@@ -298,8 +290,7 @@ q_3.solution()
 # MARKDOWN ********************
 
 # Once you've got the solution, run this cell to detect the feature with ReLU and see the result!
-#
-# The image you see below is the feature map produced by the kernel you chose. If you like, experiment with some of the other suggested kernels above, or, try to invent one that will extract a certain kind of feature.
+# # The image you see below is the feature map produced by the kernel you chose. If you like, experiment with some of the other suggested kernels above, or, try to invent one that will extract a certain kind of feature.
 
 
 # CELL ********************
@@ -323,10 +314,8 @@ plt.show();
 # MARKDOWN ********************
 
 # In the tutorial, our discussion of kernels and feature maps was mainly visual. We saw the effect of `Conv2D` and `ReLU` by observing how they transformed some example images.
-#
-# But the operations in a convolutional network (like in all neural networks) are usually defined through mathematical functions, through a computation on numbers. In the next exercise, we'll take a moment to explore this point of view.
-#
-# Let's start by defining a simple array to act as an image, and another array to act as the kernel. Run the following cell to see these arrays.
+# # But the operations in a convolutional network (like in all neural networks) are usually defined through mathematical functions, through a computation on numbers. In the next exercise, we'll take a moment to explore this point of view.
+# # Let's start by defining a simple array to act as an image, and another array to act as the kernel. Run the following cell to see these arrays.
 
 # CELL ********************
 
@@ -368,9 +357,7 @@ kernel = tf.cast(kernel, dtype=tf.float32)
 # MARKDOWN ********************
 
 # # 4) Observe Convolution on a Numerical Matrix #
-#
-#
-# What do you see? The image is simply a long vertical line on the left and a short horizontal line on the lower right. What about the kernel? What effect do you think it will have on this image? After you've thought about it, run the next cell for the answer.
+# # # What do you see? The image is simply a long vertical line on the left and a short horizontal line on the lower right. What about the kernel? What effect do you think it will have on this image? After you've thought about it, run the next cell for the answer.
 
 # CELL ********************
 
@@ -413,11 +400,7 @@ display(sympy.Matrix(tf.squeeze(image_detect).numpy()))
 # MARKDOWN ********************
 
 # Is the result what you expected?
-#
-# # Conclusion #
-#
-# In this lesson, you learned about the first two operations a convolutional classifier uses for feature extraction: **filtering** an image with a **convolution** and **detecting** the feature with the **rectified linear unit**.
-#
-# # Keep Going #
-#
-# Move on to [**Tutorial 3**] to learn the final operation: **condensing** the feature map with **maximum pooling**!
+# # # Conclusion #
+# # In this lesson, you learned about the first two operations a convolutional classifier uses for feature extraction: **filtering** an image with a **convolution** and **detecting** the feature with the **rectified linear unit**.
+# # # Keep Going #
+# # Move on to [**Tutorial 3**] to learn the final operation: **condensing** the feature map with **maximum pooling**!

@@ -127,8 +127,7 @@ dataset.describe()
 
 # MARKDOWN ********************
 
-#
-# # Step 1: Model Creation and Fit
+# # # Step 1: Model Creation and Fit
 # 
 # Run the code cell below without changes to split the data into train and test.
 
@@ -264,8 +263,7 @@ step_3.solution()
 # MARKDOWN ********************
 
 # # Step 4: Calculate Recall
-#
-# Now your goal will be to calculate the Recall
+# # Now your goal will be to calculate the Recall
 
 
 # CELL ********************

@@ -72,7 +72,7 @@ print("Setup complete.")
 # CELL ********************
 
 # Your code here
-dtype = ____
+dtype = reviews['points'].dtype
 
 # Check your answer
 q1.check()
@@ -103,7 +103,7 @@ q1.check()
 
 # CELL ********************
 
-point_strings = ____
+point_strings = reviews['points'].astype(str)
 
 # Check your answer
 q2.check()
@@ -134,7 +134,7 @@ q2.check()
 
 # CELL ********************
 
-n_missing_prices = ____
+n_missing_prices = reviews['price'].isna().sum()
 
 # Check your answer
 q3.check()
@@ -174,7 +174,7 @@ q3.check()
 
 # CELL ********************
 
-reviews_per_region = ____
+reviews_per_region = reviews['region_1'].fillna('Unknown').value_counts()
 
 # Check your answer
 q4.check()
